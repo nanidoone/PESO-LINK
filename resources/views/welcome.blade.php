@@ -153,13 +153,24 @@
             .hero-tabulation {
                 background: rgba(255, 255, 255, 0.8);
                 color: var(--orig-blue-900);
-                border: 1px solid rgba(252, 211, 77, 0.32);
+                border: 1px solid rgba(252, 211, 77, 0.58);
                 border-radius: 22px;
                 padding: clamp(26px, 2.8vw, 40px);
                 width: min(420px, 100%);
-                box-shadow: 0 22px 46px rgba(9, 32, 77, 0.34), 0 10px 20px rgba(0, 0, 0, 0.16);
+                box-shadow: 0 0 0 1px rgba(252, 211, 77, 0.34), 0 0 30px rgba(252, 211, 77, 0.24), 0 22px 46px rgba(9, 32, 77, 0.34), 0 10px 20px rgba(0, 0, 0, 0.16);
                 backdrop-filter: blur(8px);
                 justify-self: end;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-tabulation::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: inherit;
+                pointer-events: none;
+                box-shadow: inset 0 0 0 1px rgba(252, 211, 77, 0.32);
             }
 
             .hero-tabulation-grid {
@@ -316,15 +327,13 @@
                 <div class="peso-header-right">
                     <nav class="peso-nav" aria-label="Primary">
                         <a href="#" class="is-active">Home</a>
-                        <a href="#">About</a>
+                        <a href="#">Job Postings</a>
                         <a href="#">Services</a>
+                        <a href="#">About Us</a>
                         <a href="#">Contact Us</a>
                     </nav>
 
                     <div class="peso-actions">
-                        <label class="peso-search" aria-label="Search">
-                            <input type="search" placeholder="Search...">
-                        </label>
                         <button type="button" class="peso-chip">Login</button>
                         <button type="button" class="peso-chip">Register</button>
                     </div>
