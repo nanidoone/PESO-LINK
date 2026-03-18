@@ -42,8 +42,28 @@
                 justify-content: flex-end !important;
             }
 
+            .peso-hero {
+                background-image: url('/images/background-desktop.png'), url('/images/background.png') !important;
+                background-size: contain !important;
+                background-position: center top !important;
+                background-repeat: no-repeat !important;
+                aspect-ratio: 16 / 9;
+                height: auto !important;
+                min-height: 0 !important;
+            }
+
+            @media (max-width: 1024px) {
+                .peso-hero {
+                    background-image: url('/images/background-tablet.png'), url('/images/background.png') !important;
+                    background-size: cover !important;
+                    background-position: center top !important;
+                    height: calc(100svh - 74px) !important;
+                    min-height: 520px !important;
+                }
+            }
+
             .peso-hero-content {
-                padding-top: clamp(140px, 16vh, 220px) !important;
+                padding-top: clamp(86px, 10vw, 150px) !important;
                 align-items: flex-start !important;
             }
 
@@ -117,6 +137,14 @@
             }
 
             @media (max-width: 800px) {
+                .peso-hero {
+                    background-image: url('/images/background-mobile.png'), url('/images/background.png') !important;
+                    background-size: cover !important;
+                    height: calc(100svh - 74px) !important;
+                    min-height: 480px !important;
+                    background-position: 58% center !important;
+                }
+
                 .peso-hero-content {
                     padding-top: 130px !important;
                 }
