@@ -10,6 +10,38 @@
         @else
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         @endif
+
+        <style>
+            .peso-header-inner {
+                width: 100% !important;
+                justify-content: space-between !important;
+                padding: 0 16px !important;
+            }
+
+            .peso-brand {
+                margin-right: 0 !important;
+                flex-shrink: 0 !important;
+            }
+
+            .peso-header-right {
+                margin-left: auto !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                flex: 1 !important;
+                min-width: 0 !important;
+                gap: 18px !important;
+            }
+
+            .peso-nav {
+                margin-left: 0 !important;
+                justify-content: flex-end !important;
+            }
+
+            .peso-actions {
+                justify-content: flex-end !important;
+            }
+        </style>
     </head>
     <body class="peso-body">
         <header class="peso-header">
@@ -19,19 +51,21 @@
                     <span class="peso-brand-text">PESO Manolo Fortich</span>
                 </a>
 
-                <nav class="peso-nav" aria-label="Primary">
-                    <a href="#" class="is-active">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Contact Us</a>
-                </nav>
+                <div class="peso-header-right">
+                    <nav class="peso-nav" aria-label="Primary">
+                        <a href="#" class="is-active">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact Us</a>
+                    </nav>
 
-                <div class="peso-actions">
-                    <label class="peso-search" aria-label="Search">
-                        <input type="search" placeholder="Search...">
-                    </label>
-                    <button type="button" class="peso-chip">Login</button>
-                    <button type="button" class="peso-chip">Register</button>
+                    <div class="peso-actions">
+                        <label class="peso-search" aria-label="Search">
+                            <input type="search" placeholder="Search...">
+                        </label>
+                        <button type="button" class="peso-chip">Login</button>
+                        <button type="button" class="peso-chip">Register</button>
+                    </div>
                 </div>
             </div>
         </header>
