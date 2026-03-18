@@ -56,6 +56,22 @@
                 justify-content: flex-end !important;
             }
 
+            .peso-chip {
+                min-width: 110px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease,
+                    transform 0.18s ease;
+            }
+
+            .peso-chip:hover {
+                background: #1e3a8a;
+                border-color: #fcd34d;
+                box-shadow: 0 8px 18px rgba(9, 40, 73, 0.35);
+                transform: translateY(-1px);
+            }
+
             .peso-hero {
                 background-image: url('/images/background-desktop.png'), url('/images/background.png') !important;
                 background-size: contain !important;
