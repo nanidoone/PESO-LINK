@@ -12,6 +12,20 @@
         @endif
 
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+            body.peso-body {
+                font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            :root {
+                --orig-blue-900: #1e3a8a;
+                --orig-blue-800: #1e40af;
+                --orig-red-600: #dc2626;
+                --orig-yellow-300: #fcd34d;
+                --orig-white: #ffffff;
+            }
+
             .peso-header-inner {
                 width: 100% !important;
                 justify-content: space-between !important;
@@ -50,6 +64,14 @@
                 aspect-ratio: 16 / 9;
                 height: auto !important;
                 min-height: 0 !important;
+                position: relative;
+                isolation: isolate;
+                display: flex;
+                align-items: center;
+            }
+
+            .peso-hero::before {
+                content: none;
             }
 
             @media (max-width: 1024px) {
@@ -63,22 +85,112 @@
             }
 
             .peso-hero-content {
-                padding-top: clamp(86px, 10vw, 150px) !important;
-                align-items: flex-start !important;
+                width: 100%;
+                height: 100%;
+                min-height: 100% !important;
+                padding: 0 18px !important;
+                align-items: center !important;
+                justify-content: center !important;
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-split {
+                width: min(1220px, 100%);
+                display: grid;
+                grid-template-columns: 1.15fr 0.85fr;
+                gap: clamp(16px, 2.2vw, 34px);
+                align-items: center;
+                margin: 0;
+            }
+
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid rgba(252, 211, 77, 0.45);
+                color: var(--orig-blue-900);
+                padding: 8px 15px;
+                font-size: 0.875rem;
+                font-weight: 500;
+                margin-bottom: 14px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
             }
 
             .peso-copy {
-                width: min(1000px, 100%);
-                margin-inline: auto;
+                width: 100%;
+                margin-inline: 0;
+                text-align: left !important;
+                justify-self: start;
             }
 
-            .peso-copy h1 {
-                font-size: clamp(38px, 5vw, 68px) !important;
-                line-height: 1.08 !important;
+            .hero-title {
+                margin: 0;
+                font-size: clamp(2.1rem, 4.3vw, 3rem);
+                line-height: 1.04;
+                color: var(--orig-blue-900);
+                text-shadow: 0 6px 16px rgba(255, 255, 255, 0.55);
+                font-weight: 900;
             }
 
-            .peso-copy p {
-                margin-top: 16px !important;
+            .hero-subtitle {
+                margin: 8px 0 0;
+                color: var(--orig-yellow-300);
+                font-size: clamp(1.2rem, 2vw, 1.5rem);
+                line-height: 1.1;
+                font-weight: 700;
+            }
+
+            .hero-description {
+                margin: 14px 0 0;
+                color: var(--orig-blue-900);
+                font-size: clamp(1rem, 1.2vw, 1.125rem);
+                line-height: 1.45;
+                max-width: 600px;
+            }
+
+            .hero-tabulation {
+                background: rgba(255, 255, 255, 0.8);
+                color: var(--orig-blue-900);
+                border: 1px solid rgba(252, 211, 77, 0.32);
+                border-radius: 22px;
+                padding: clamp(26px, 2.8vw, 40px);
+                width: min(420px, 100%);
+                box-shadow: 0 22px 46px rgba(9, 32, 77, 0.34), 0 10px 20px rgba(0, 0, 0, 0.16);
+                backdrop-filter: blur(8px);
+                justify-self: end;
+            }
+
+            .hero-tabulation-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px 24px;
+            }
+
+            .hero-stat {
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            .hero-stat strong {
+                display: block;
+                font-size: clamp(34px, 3.2vw, 52px);
+                line-height: 1;
+                color: var(--orig-blue-900);
+                font-weight: 900;
+            }
+
+            .hero-stat span {
+                display: block;
+                font-size: 1rem;
+                opacity: 0.96;
+                margin-top: 8px;
+                font-weight: 600;
+                color: var(--orig-red-600);
             }
 
             .about-section {
@@ -146,7 +258,40 @@
                 }
 
                 .peso-hero-content {
-                    padding-top: 130px !important;
+                    padding: 0 14px !important;
+                }
+
+                .hero-split {
+                    grid-template-columns: 1fr;
+                    gap: 14px;
+                }
+
+                .hero-badge {
+                    font-size: 0.8125rem;
+                    margin-bottom: 12px;
+                }
+
+                .hero-title {
+                    font-size: clamp(1.8rem, 8vw, 2.4rem);
+                }
+
+                .hero-subtitle {
+                    font-size: clamp(1.05rem, 5vw, 1.3rem);
+                }
+
+                .hero-tabulation {
+                    max-width: 560px;
+                    width: 100%;
+                    margin-inline: auto;
+                    padding: 20px;
+                }
+
+                .hero-tabulation-grid {
+                    gap: 14px;
+                }
+
+                .hero-stat strong {
+                    font-size: clamp(26px, 7vw, 38px);
                 }
 
                 .about-section {
@@ -190,13 +335,37 @@
         <main class="peso-main">
             <section class="peso-hero" aria-label="Welcome section">
                 <div class="peso-hero-content">
-                    <div class="peso-copy">
-                        <h1>
-                            <span>Welcome to</span>
-                            <strong>PESO</strong>
-                            <strong>Manolo Fortich</strong>
-                        </h1>
-                        <p>Your gateway to employment, livelihood, and skills development</p>
+                    <div class="hero-split">
+                        <div class="peso-copy">
+                            <span class="hero-badge">Public Employment Service Office</span>
+                            <h1 class="hero-title">PESO Job Portal System</h1>
+                            <h2 class="hero-subtitle">Manolo Fortich, Bukidnon</h2>
+                            <p class="hero-description">
+                                Bridging job seekers and employers in the Municipality of Manolo Fortich through
+                                efficient, accessible, and free employment services.
+                            </p>
+                        </div>
+
+                        <aside class="hero-tabulation" aria-label="Quick statistics">
+                            <div class="hero-tabulation-grid">
+                                <div class="hero-stat">
+                                    <strong>500+</strong>
+                                    <span>Job Seekers</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>50+</strong>
+                                    <span>Employers</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>300+</strong>
+                                    <span>Jobs Posted</span>
+                                </div>
+                                <div class="hero-stat">
+                                    <strong>85+</strong>
+                                    <span>Placement Rate</span>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </div>
             </section>
