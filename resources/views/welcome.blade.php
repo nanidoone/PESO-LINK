@@ -283,6 +283,21 @@
                     min-height: 480px !important;
                     background-position: 58% center !important;
                 }
+                    .hero-split {
+                        grid-template-columns: 1fr;
+                        gap: 18px;
+                    }
+                    .peso-copy {
+                        text-align: center !important;
+                        justify-self: center;
+                    }
+                    .hero-description {
+                        margin-inline: auto;
+                    }
+                    .hero-tabulation {
+                        justify-self: center;
+                        width: min(560px, 100%);
+                    }
 
                 .peso-hero-content {
                     padding: 0 14px !important;
@@ -290,7 +305,7 @@
 
                 .hero-split {
                     grid-template-columns: 1fr;
-                    gap: 14px;
+                        min-height: 620px !important;
                 }
 
                 .hero-badge {
@@ -329,7 +344,35 @@
                 .about-section::before {
                     width: 58%;
                 }
-            }
+                }
+
+                @media (max-width: 620px) {
+                    .peso-brand-text {
+                        font-size: 2rem;
+                    }
+                    .peso-nav {
+                        gap: 10px;
+                    }
+                    .peso-nav a {
+                        font-size: 13px;
+                    }
+                    .peso-chip {
+                        min-width: 102px;
+                        padding: 8px 12px;
+                    }
+                    .hero-tabulation {
+                        padding: 16px;
+                    }
+                    .hero-tabulation-grid {
+                        gap: 10px 12px;
+                    }
+                    .hero-stat strong {
+                        font-size: clamp(24px, 10vw, 32px);
+                    }
+                    .hero-stat span {
+                        font-size: 0.9rem;
+                    }
+                }
         </style>
     </head>
     <body class="peso-body">
