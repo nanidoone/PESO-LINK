@@ -77,8 +77,8 @@
 
             .peso-hero {
                 background-image: url('/images/background-desktop.png'), url('/images/background.png') !important;
-                background-size: 1200px auto, 1200px auto !important;
-                background-position: center top !important;
+                background-size: 1100px auto, 1100px auto !important;
+                background-position: center 12px !important;
                 background-repeat: no-repeat !important;
                 min-height: calc(100vh - 76px);
                 position: relative;
@@ -88,6 +88,23 @@
                 padding: clamp(32px, 4vw, 52px) 0;
             }
 
+            /* Responsive background sizing */
+            .hero-section {
+                background-size: 100% auto;
+            }
+
+            @media (max-width: 375px) {
+                .hero-section {
+                    background-size: 120% auto;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .hero-section {
+                    background-size: 100% auto;
+                }
+            }
+
             .peso-hero::before {
                 content: none;
             }
@@ -95,7 +112,7 @@
             @media (max-width: 1024px) {
                 .peso-hero {
                     background-image: url('/images/background-tablet.png'), url('/images/background.png') !important;
-                    background-size: 900px auto, 900px auto !important;
+                    background-size: 920px auto, 920px auto !important;
                     background-position: center top !important;
                     height: calc(100svh - 74px) !important;
                     min-height: 520px !important;
@@ -106,7 +123,7 @@
                 width: 100%;
                 height: 100%;
                 min-height: 100% !important;
-                padding: 0 clamp(18px, 4vw, 38px) !important;
+                padding: clamp(28px, 5vw, 72px) clamp(18px, 4vw, 38px) !important;
                 display: flex;
                 align-items: center !important;
                 justify-content: center !important;
@@ -202,14 +219,14 @@
                 border: 1px solid rgba(252, 211, 77, 0.48);
                 border-radius: 22px;
                 padding: clamp(22px, 2.4vw, 32px);
-                width: min(420px, 100%);
+                width: min(440px, 100%);
                 box-shadow: 0 18px 40px rgba(9, 32, 77, 0.22);
                 backdrop-filter: blur(10px);
                 justify-self: end;
                 position: relative;
                 overflow: hidden;
                 align-self: start;
-                margin-top: clamp(60px, 6vw, 60px);
+                margin-top: clamp(32px, 5vw, 78px);
             }
 
             .hero-tabulation::after {
@@ -253,13 +270,12 @@
             }
 
             .about-section {
-                background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, #ffffff 30%);
-                backdrop-filter: blur(2px);
+                background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
                 border-radius: 28px;
-                padding: 2.4rem 2.25rem 2.25rem;
+                padding: 2.6rem 2.6rem 2.4rem;
                 margin: 2.25rem auto 2.5rem;
-                box-shadow: 0 14px 30px rgba(0, 20, 40, 0.12);
-                border: 1px solid #eef2f6;
+                box-shadow: 0 18px 40px rgba(14, 38, 79, 0.12);
+                border: 1px solid #e5e7eb;
                 width: min(1300px, calc(100% - 24px));
                 position: relative;
                 z-index: 2;
@@ -300,18 +316,20 @@
             @media (max-width: 800px) {
                 .peso-hero {
                     background-image: url('/images/background-mobile.png'), url('/images/background.png') !important;
-                    background-size: cover !important;
+                    background-size: 700px auto, 700px auto !important;
                     height: calc(100svh - 74px) !important;
-                    min-height: 480px !important;
-                    background-position: 58% center !important;
+                    min-height: 520px !important;
+                    background-position: center -12px !important;
                 }
                     .hero-split {
                         grid-template-columns: 1fr;
                         gap: 18px;
+                        align-items: start;
                     }
                     .peso-copy {
                         text-align: center !important;
                         justify-self: center;
+                        margin-top: 18px;
                     }
                     .hero-description {
                         margin-inline: auto;
@@ -319,10 +337,11 @@
                     .hero-tabulation {
                         justify-self: center;
                         width: min(560px, 100%);
+                        margin-top: 28px;
                     }
 
                 .peso-hero-content {
-                    padding: 0 14px !important;
+                    padding: 18px 16px 8px !important;
                 }
 
                 .hero-split {
@@ -336,7 +355,7 @@
                 }
 
                 .hero-title {
-                    font-size: clamp(1.8rem, 8vw, 2.4rem);
+                    font-size: clamp(1.6rem, 7vw, 2.2rem);
                 }
 
                 .hero-subtitle {
@@ -367,6 +386,64 @@
                     width: 58%;
                 }
                 }
+
+            /* Mobile refinements */
+            @media (max-width: 540px) {
+                .peso-hero {
+                    padding: 22px 0 32px;
+                    background-size: 680px auto, 680px auto !important;
+                    background-position: center 24px !important;
+                    padding-bottom: 88px;
+                }
+
+                .peso-hero-content {
+                    padding: 20px 16px 6px !important;
+                }
+
+                .hero-split {
+                    gap: 16px;
+                }
+
+                .hero-title {
+                    font-size: clamp(1.45rem, 6.6vw, 1.95rem);
+                    line-height: 1.08;
+                }
+
+                .hero-subtitle {
+                    font-size: clamp(0.98rem, 5vw, 1.18rem);
+                }
+
+                .hero-description {
+                    font-size: clamp(0.95rem, 4.6vw, 1.08rem);
+                    line-height: 1.55;
+                    margin: 12px 0 18px;
+                }
+
+                .hero-tabulation {
+                    margin-top: 14px;
+                    padding: 18px;
+                    width: 100%;
+                }
+
+                .hero-tabulation-grid {
+                    gap: 12px;
+                }
+
+                .hero-cta {
+                    justify-content: center;
+                    margin-top: 12px;
+                }
+
+                .hero-btn-primary {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                /* Hide stats card on small phones */
+                .hero-tabulation {
+                    display: none;
+                }
+            }
 
                 @media (max-width: 620px) {
                     .peso-brand-text {
@@ -472,7 +549,7 @@
         @include('components.navbar')
 
         <main class="peso-main">
-            <section class="peso-hero" aria-label="Welcome section">
+            <section class="peso-hero hero-section" aria-label="Welcome section">
                 <div class="peso-hero-content">
                     <div class="hero-split">
                         <div class="peso-copy">
