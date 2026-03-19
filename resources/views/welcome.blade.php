@@ -257,7 +257,7 @@
                 backdrop-filter: blur(2px);
                 border-radius: 28px;
                 padding: 2.4rem 2.25rem 2.25rem;
-                margin: -1.35rem auto 2.5rem;
+                margin: 2.25rem auto 2.5rem;
                 box-shadow: 0 14px 30px rgba(0, 20, 40, 0.12);
                 border: 1px solid #eef2f6;
                 width: min(1300px, calc(100% - 24px));
