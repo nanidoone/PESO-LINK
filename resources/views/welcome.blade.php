@@ -473,14 +473,17 @@
                     background-size: 100% auto !important;
                     background-repeat: no-repeat !important;
                     background-position: center top !important;
+                    aspect-ratio: auto !important;
                     height: auto !important;
-                    min-height: 120svh !important;
+                    min-height: 100svh !important;
                 }
 
                 .peso-hero-content {
+                    height: auto !important;
+                    min-height: 0 !important;
                     align-items: center !important;
                     justify-content: flex-start !important;
-                    padding: 248px 12px 170px !important;
+                    padding: 127px 12px 28px !important;
                 }
 
                 .hero-split {
@@ -540,7 +543,7 @@
 
                 .hero-tabulation {
                     width: min(90vw, 310px);
-                    margin-top: 16px;
+                    margin-top: 12px;
                     padding: 14px 10px 12px;
                     border-radius: 14px;
                     justify-self: center;
@@ -560,19 +563,28 @@
                 }
 
                 .about-section {
+                    --about-offset: 33px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.92) 30%);
                     padding: 1.25rem;
-                    margin: -22px auto 1.5rem;
+                    margin: var(--about-offset) auto 1.5rem;
                     position: relative;
+                    isolation: isolate;
+                    overflow: visible;
                     z-index: 3;
                 }
 
                 .about-section::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%, -100%);
                     display: block;
-                    top: -20px;
+                    top: 0;
                     width: min(420px, 95%);
-                    height: 26px;
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0) 100%);
-                    filter: blur(2px);
+                    height: 16px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+                    filter: blur(0.8px);
+                    pointer-events: none;
                 }
 
                 .about-grid {
