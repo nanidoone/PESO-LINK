@@ -72,6 +72,58 @@
                 transform: translateY(-1px);
             }
 
+            .peso-mobile-controls {
+                display: none;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .peso-icon-btn,
+            .peso-menu-toggle {
+                width: 38px;
+                height: 38px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                border: 1.5px solid #fcd34d;
+                background: rgba(255, 255, 255, 0.12);
+                color: #ffffff;
+                text-decoration: none;
+                cursor: pointer;
+                transition: background-color 0.18s ease, transform 0.18s ease;
+            }
+
+            .peso-icon-btn:hover,
+            .peso-menu-toggle:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-1px);
+            }
+
+            .peso-icon-btn svg {
+                width: 18px;
+                height: 18px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            .peso-menu-toggle {
+                appearance: none;
+                -webkit-appearance: none;
+            }
+
+            .peso-menu-toggle .bar {
+                width: 16px;
+                height: 2px;
+                border-radius: 2px;
+                background: currentColor;
+                display: block;
+                margin: 2px 0;
+            }
+
             .peso-hero {
                 background-image: url('/images/background-desktop.png'), url('/images/background.png') !important;
                 background-size: contain !important;
@@ -88,16 +140,6 @@
 
             .peso-hero::before {
                 content: none;
-            }
-
-            @media (max-width: 1024px) {
-                .peso-hero {
-                    background-image: url('/images/background-tablet.png'), url('/images/background.png') !important;
-                    background-size: cover !important;
-                    background-position: center top !important;
-                    height: calc(100svh - 74px) !important;
-                    min-height: 520px !important;
-                }
             }
 
             .peso-hero-content {
@@ -275,29 +317,98 @@
                 margin: 0;
             }
 
+            @media (max-width: 1024px) {
+                .peso-hero {
+                    background-image: url('/images/background-tablet.png'), url('/images/background.png') !important;
+                    background-size: cover !important;
+                    background-position: center top !important;
+                    height: calc(100svh - 74px) !important;
+                    min-height: 520px !important;
+                }
+
+                .hero-split {
+                    grid-template-columns: 1fr;
+                    gap: 18px;
+                }
+
+                .peso-copy {
+                    text-align: center !important;
+                    justify-self: center;
+                }
+
+                .hero-description {
+                    margin-inline: auto;
+                }
+
+                .hero-tabulation {
+                    justify-self: center;
+                    width: min(560px, 100%);
+                }
+            }
+
+            @media (max-width: 960px) {
+                .peso-header-inner {
+                    flex-wrap: wrap;
+                    row-gap: 10px;
+                    padding: 10px 16px !important;
+                }
+
+                .peso-brand {
+                    width: auto;
+                    justify-content: flex-start;
+                }
+
+                .peso-mobile-controls {
+                    display: inline-flex;
+                    margin-left: auto;
+                    justify-content: flex-end;
+                    flex-shrink: 0;
+                }
+
+                .peso-menu-toggle {
+                    margin-left: 2px;
+                }
+
+                .peso-header-right {
+                    display: none !important;
+                    width: 100% !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    gap: 10px !important;
+                    order: 3;
+                    padding-bottom: 8px;
+                }
+
+                .peso-header.is-menu-open .peso-header-right {
+                    display: flex !important;
+                }
+
+                .peso-nav {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center !important;
+                    gap: 12px;
+                }
+
+                .peso-nav a {
+                    font-size: 14px;
+                }
+
+                .peso-actions {
+                    display: none !important;
+                }
+            }
+
             @media (max-width: 800px) {
                 .peso-hero {
-                    background-image: url('/images/background-mobile.png'), url('/images/background.png') !important;
+                    background-image: url('/images/mobile-background.png') !important;
                     background-size: cover !important;
                     height: calc(100svh - 74px) !important;
-                    min-height: 480px !important;
-                    background-position: 58% center !important;
+                    min-height: calc(100svh - 74px) !important;
+                    background-position: right top !important;
                 }
-                    .hero-split {
-                        grid-template-columns: 1fr;
-                        gap: 18px;
-                    }
-                    .peso-copy {
-                        text-align: center !important;
-                        justify-self: center;
-                    }
-                    .hero-description {
-                        margin-inline: auto;
-                    }
-                    .hero-tabulation {
-                        justify-self: center;
-                        width: min(560px, 100%);
-                    }
 
                 .peso-hero-content {
                     padding: 0 14px !important;
@@ -305,7 +416,7 @@
 
                 .hero-split {
                     grid-template-columns: 1fr;
-                        min-height: 620px !important;
+                    gap: 14px;
                 }
 
                 .hero-badge {
@@ -344,35 +455,99 @@
                 .about-section::before {
                     width: 58%;
                 }
+            }
+
+            @media (max-width: 620px) {
+                .peso-hero {
+                    background-size: cover !important;
+                    background-position: right top !important;
+                    min-height: calc(100svh - 74px) !important;
                 }
 
-                @media (max-width: 620px) {
-                    .peso-brand-text {
-                        font-size: 2rem;
-                    }
-                    .peso-nav {
-                        gap: 10px;
-                    }
-                    .peso-nav a {
-                        font-size: 13px;
-                    }
-                    .peso-chip {
-                        min-width: 102px;
-                        padding: 8px 12px;
-                    }
-                    .hero-tabulation {
-                        padding: 16px;
-                    }
-                    .hero-tabulation-grid {
-                        gap: 10px 12px;
-                    }
-                    .hero-stat strong {
-                        font-size: clamp(24px, 10vw, 32px);
-                    }
-                    .hero-stat span {
-                        font-size: 0.9rem;
-                    }
+                .peso-hero-content {
+                    align-items: center !important;
+                    justify-content: center !important;
+                    padding: 46px 12px 52px !important;
                 }
+
+                .hero-split {
+                    width: min(92vw, 350px);
+                    gap: 8px;
+                }
+
+                .peso-copy {
+                    text-align: center !important;
+                    justify-self: center;
+                }
+
+                .hero-title {
+                    font-size: clamp(1.45rem, 6.4vw, 1.9rem);
+                }
+
+                .hero-subtitle {
+                    font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+                }
+
+                .hero-description {
+                    font-size: 0.82rem;
+                    line-height: 1.25;
+                    margin-top: 8px;
+                    margin-inline: auto;
+                }
+
+                .peso-brand-text {
+                    font-size: 1.45rem;
+                }
+
+                .peso-nav {
+                    gap: 10px;
+                }
+
+                .peso-nav a {
+                    font-size: 13px;
+                }
+
+                .peso-chip {
+                    min-width: 102px;
+                    padding: 8px 12px;
+                }
+
+                .peso-mobile-controls {
+                    gap: 6px;
+                }
+
+                .peso-icon-btn,
+                .peso-menu-toggle {
+                    width: 34px;
+                    height: 34px;
+                }
+
+                .hero-tabulation {
+                    width: min(90vw, 320px);
+                    margin-top: 0;
+                    padding: 10px 10px;
+                }
+
+                .hero-tabulation-grid {
+                    gap: 6px 8px;
+                }
+
+                .hero-stat strong {
+                    font-size: clamp(18px, 7.2vw, 24px);
+                }
+
+                .hero-stat span {
+                    font-size: 0.78rem;
+                }
+
+                .about-section {
+                    margin: 1rem auto 1.5rem;
+                }
+
+                .about-section::before {
+                    display: none;
+                }
+            }
         </style>
     </head>
     <body class="peso-body">
@@ -383,7 +558,21 @@
                     <span class="peso-brand-text">PESO Manolo Fortich</span>
                 </a>
 
-                <div class="peso-header-right">
+                <div class="peso-mobile-controls" aria-label="Mobile header controls">
+                    <a href="#" class="peso-icon-btn" aria-label="Login">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6"></path></svg>
+                    </a>
+                    <a href="#" class="peso-icon-btn" aria-label="Register">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 20c0-3.3 3.1-6 7-6"></path><path d="M17 9v6"></path><path d="M14 12h6"></path></svg>
+                    </a>
+                    <button type="button" class="peso-menu-toggle" id="pesoMenuToggle" aria-expanded="false" aria-controls="pesoHeaderRight" aria-label="Toggle menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+
+                <div class="peso-header-right" id="pesoHeaderRight">
                     <nav class="peso-nav" aria-label="Primary">
                         <a href="#" class="is-active">Home</a>
                         <a href="#">Job Postings</a>
@@ -460,5 +649,25 @@
                 </div>
             </section>
         </main>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var header = document.querySelector('.peso-header');
+                var toggle = document.getElementById('pesoMenuToggle');
+                if (!header || !toggle) return;
+
+                toggle.addEventListener('click', function () {
+                    var isOpen = header.classList.toggle('is-menu-open');
+                    toggle.setAttribute('aria-expanded', String(isOpen));
+                });
+
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 960) {
+                        header.classList.remove('is-menu-open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
