@@ -1,6 +1,6 @@
 <!-- NAVBAR HEADER -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-top custom-navbar" style="background: #2d5aa0;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-top custom-navbar">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
       <img src="{{ asset('images/logo.png') }}" alt="PESO Logo" title="PESO Logo" class="logo-img me-2" style="width: 95px; height: auto; border-radius: 4px; object-fit: contain;">
@@ -67,7 +67,7 @@
         </li>
         @else
         <li class="nav-item d-flex align-items-center ms-2">
-          <a href="{{ url('/login') }}" class="btn btn-warning fw-bold cta-button">
+          <a href="{{ url('/login') }}" class="btn fw-bold cta-button">
             <i class="bi bi-box-arrow-in-right me-2"></i><span class="d-none d-sm-inline">Log In</span><span class="d-sm-none">Login</span>
           </a>
         </li>
@@ -78,13 +78,82 @@
 </nav>
 
 <style>
-.navbar .active {
-  background: rgba(255,255,255,0.2);
-  border-radius: 8px;
+.custom-navbar {
+  background: linear-gradient(90deg, #0f2d52, #1f4b8f);
+  border-bottom: 3px solid #d72638;
+  box-shadow: 0 10px 28px rgba(10, 35, 80, 0.28);
+  padding-block: 10px;
 }
+
+.navbar-brand-text {
+  color: #f5f7fb;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand-text-sm {
+  color: #f5f7fb;
+  font-weight: 700;
+}
+
+.navbar-nav-custom .nav-link-custom {
+  color: #dfe7f5;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.navbar-nav-custom .nav-link-custom:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 18px rgba(15, 45, 82, 0.32);
+}
+
 .navbar .nav-link-custom.active {
-  color: #fff !important;
+  color: #ffffff !important;
+  background: rgba(215, 38, 56, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(215, 38, 56, 0.6);
 }
+
+.dropdown-menu-custom {
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(10, 35, 80, 0.18);
+  border: 1px solid rgba(15, 45, 82, 0.08);
+}
+
+.dropdown-item-custom {
+  font-weight: 600;
+}
+
+.dropdown-item-custom:hover,
+.dropdown-item-custom.active {
+  background: rgba(215, 38, 56, 0.14);
+  color: #0f2d52;
+}
+
+.cta-button {
+  background: linear-gradient(120deg, #d72638, #f24b5d);
+  border: 1px solid #d72638;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 10px 18px;
+  box-shadow: 0 10px 20px rgba(215, 38, 56, 0.28);
+}
+
+.cta-button:hover {
+  color: #ffffff;
+  filter: brightness(1.05);
+}
+
+.navbar-toggler-custom {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-custom .navbar-toggler-icon {
+  filter: invert(92%);
+}
+
 .logo-fallback {
   font-size: 1.4rem !important;
 }
