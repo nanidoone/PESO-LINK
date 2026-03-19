@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PESO Job Portal</title>
 
+        <!-- Bootstrap CSS for navbar and layout -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
@@ -74,16 +77,15 @@
 
             .peso-hero {
                 background-image: url('/images/background-desktop.png'), url('/images/background.png') !important;
-                background-size: contain !important;
+                background-size: 1200px auto, 1200px auto !important;
                 background-position: center top !important;
                 background-repeat: no-repeat !important;
-                aspect-ratio: 16 / 9;
-                height: auto !important;
-                min-height: 0 !important;
+                min-height: calc(100vh - 76px);
                 position: relative;
                 isolation: isolate;
                 display: flex;
                 align-items: center;
+                padding: clamp(32px, 4vw, 52px) 0;
             }
 
             .peso-hero::before {
@@ -93,7 +95,7 @@
             @media (max-width: 1024px) {
                 .peso-hero {
                     background-image: url('/images/background-tablet.png'), url('/images/background.png') !important;
-                    background-size: cover !important;
+                    background-size: 900px auto, 900px auto !important;
                     background-position: center top !important;
                     height: calc(100svh - 74px) !important;
                     min-height: 520px !important;
@@ -104,7 +106,8 @@
                 width: 100%;
                 height: 100%;
                 min-height: 100% !important;
-                padding: 0 18px !important;
+                padding: 0 clamp(18px, 4vw, 38px) !important;
+                display: flex;
                 align-items: center !important;
                 justify-content: center !important;
                 position: relative;
@@ -112,12 +115,12 @@
             }
 
             .hero-split {
-                width: min(1220px, 100%);
+                width: min(1240px, 100%);
                 display: grid;
-                grid-template-columns: 1.15fr 0.85fr;
-                gap: clamp(16px, 2.2vw, 34px);
-                align-items: center;
-                margin: 0;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: clamp(28px, 4vw, 56px);
+                align-items: start;
+                margin: 0 auto;
             }
 
             .hero-badge {
@@ -139,6 +142,7 @@
                 margin-inline: 0;
                 text-align: left !important;
                 justify-self: start;
+                max-width: 620px;
             }
 
             .hero-title {
@@ -159,25 +163,53 @@
             }
 
             .hero-description {
-                margin: 14px 0 0;
+                margin: 18px 0 22px;
                 color: var(--orig-blue-900);
-                font-size: clamp(1rem, 1.2vw, 1.125rem);
-                line-height: 1.45;
-                max-width: 600px;
+                font-size: clamp(1rem, 1.2vw, 1.2rem);
+                line-height: 1.6;
+                max-width: 620px;
+            }
+
+            .hero-cta {
+                display: inline-flex;
+                gap: 14px;
+                align-items: center;
+                margin-top: 6px;
+            }
+
+            .hero-btn-primary {
+                background: #1e3a8a;
+                color: #ffffff;
+                border: 2px solid #1e3a8a;
+                padding: 12px 26px;
+                border-radius: 999px;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+                box-shadow: 0 12px 30px rgba(30, 58, 138, 0.24);
+                transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+                text-decoration: none;
+            }
+
+            .hero-btn-primary:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 16px 34px rgba(30, 58, 138, 0.3);
+                background: #2546a3;
             }
 
             .hero-tabulation {
-                background: rgba(255, 255, 255, 0.8);
+                background: rgba(255, 255, 255, 0.92);
                 color: var(--orig-blue-900);
-                border: 1px solid rgba(252, 211, 77, 0.58);
+                border: 1px solid rgba(252, 211, 77, 0.48);
                 border-radius: 22px;
-                padding: clamp(26px, 2.8vw, 40px);
+                padding: clamp(22px, 2.4vw, 32px);
                 width: min(420px, 100%);
-                box-shadow: 0 0 0 1px rgba(252, 211, 77, 0.34), 0 0 30px rgba(252, 211, 77, 0.24), 0 22px 46px rgba(9, 32, 77, 0.34), 0 10px 20px rgba(0, 0, 0, 0.16);
-                backdrop-filter: blur(8px);
+                box-shadow: 0 18px 40px rgba(9, 32, 77, 0.22);
+                backdrop-filter: blur(10px);
                 justify-self: end;
                 position: relative;
                 overflow: hidden;
+                align-self: start;
+                margin-top: clamp(60px, 6vw, 60px);
             }
 
             .hero-tabulation::after {
@@ -228,23 +260,13 @@
                 margin: -1.35rem auto 2.5rem;
                 box-shadow: 0 14px 30px rgba(0, 20, 40, 0.12);
                 border: 1px solid #eef2f6;
-                border-top: 4px solid #f4c542;
                 width: min(1300px, calc(100% - 24px));
                 position: relative;
                 z-index: 2;
             }
 
             .about-section::before {
-                content: "";
-                position: absolute;
-                top: -22px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: min(340px, 62%);
-                height: 26px;
-                background: linear-gradient(180deg, rgba(244, 197, 66, 0.5) 0%, rgba(244, 197, 66, 0) 100%);
-                filter: blur(0.5px);
-                pointer-events: none;
+                content: none;
             }
 
             .about-grid {
@@ -446,29 +468,8 @@
         </style>
     </head>
     <body class="peso-body">
-        <header class="peso-header">
-            <div class="peso-header-inner">
-                <a href="#" class="peso-brand" aria-label="PESO Manolo Fortich home">
-                    <img src="{{ asset('images/logo.png') }}" alt="PESO logo" class="peso-brand-logo">
-                    <span class="peso-brand-text">PESO Manolo Fortich</span>
-                </a>
-
-                <div class="peso-header-right">
-                    <nav class="peso-nav" aria-label="Primary">
-                        <a href="#" class="is-active">Home</a>
-                        <a href="#">Job Postings</a>
-                        <a href="#">Services</a>
-                        <a href="#">About Us</a>
-                        <a href="#">Contact Us</a>
-                    </nav>
-
-                    <div class="peso-actions">
-                        <button type="button" class="peso-chip">Login</button>
-                        <button type="button" class="peso-chip">Register</button>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!-- Navbar Blade Component -->
+        @include('components.navbar')
 
         <main class="peso-main">
             <section class="peso-hero" aria-label="Welcome section">
@@ -476,12 +477,15 @@
                     <div class="hero-split">
                         <div class="peso-copy">
                             <span class="hero-badge">Public Employment Service Office</span>
-                            <h1 class="hero-title">PESO Job Portal System</h1>
-                            <h2 class="hero-subtitle">Manolo Fortich, Bukidnon</h2>
+                            <h1 class="hero-title">Connecting People with Opportunities</h1>
+                            
                             <p class="hero-description">
-                                Bridging job seekers and employers in the Municipality of Manolo Fortich through
-                                efficient, accessible, and free employment services.
+                               Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
                             </p>
+
+                            <div class="hero-cta">
+                                <a href="{{ url('/login') }}" class="hero-btn-primary">Get Started</a>
+                            </div>
                         </div>
 
                         <aside class="hero-tabulation" aria-label="Quick statistics">
@@ -495,7 +499,7 @@
                                     <span>Employers</span>
                                 </div>
                                 <div class="hero-stat">
-                                    <strong>300+</strong>
+                                    <strong>300+</strong>   
                                     <span>Jobs Posted</span>
                                 </div>
                                 <div class="hero-stat">
@@ -569,5 +573,8 @@
 </section>
 
         </main>
+
+    <!-- Bootstrap JS (for dropdowns and navbar toggler) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
