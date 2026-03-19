@@ -411,17 +411,18 @@
                 }
 
                 .peso-hero-content {
-                    padding: 0 14px !important;
+                    padding: 60px 14px 24px !important;
                 }
 
                 .hero-split {
                     grid-template-columns: 1fr;
                     gap: 14px;
+                    margin-top: 0;
                 }
 
                 .hero-badge {
                     font-size: 0.8125rem;
-                    margin-bottom: 12px;
+                    margin-bottom: 25px;
                 }
 
                 .hero-title {
@@ -449,30 +450,44 @@
 
                 .about-section {
                     padding: 1.5rem;
-                    margin: -0.75rem auto 1.5rem;
+                    margin: 1rem auto 1.5rem;
                 }
 
                 .about-section::before {
-                    width: 58%;
+                    display: none;
                 }
             }
 
             @media (max-width: 620px) {
+                .peso-header {
+                    display: none;
+                }
+
+                .peso-main {
+                    min-height: 100svh;
+                }
+
                 .peso-hero {
-                    background-size: cover !important;
-                    background-position: right top !important;
-                    min-height: calc(100svh - 74px) !important;
+                    background-color: #ececec !important;
+                    background-image: url('/images/mobile-background.png') !important;
+                    background-size: 100% auto !important;
+                    background-repeat: no-repeat !important;
+                    background-position: center top !important;
+                    height: auto !important;
+                    min-height: 120svh !important;
                 }
 
                 .peso-hero-content {
                     align-items: center !important;
-                    justify-content: center !important;
-                    padding: 46px 12px 52px !important;
+                    justify-content: flex-start !important;
+                    padding: 248px 12px 170px !important;
                 }
 
                 .hero-split {
-                    width: min(92vw, 350px);
-                    gap: 8px;
+                    width: min(92vw, 356px);
+                    gap: 10px;
+                    margin-top: 0;
+                    justify-items: center;
                 }
 
                 .peso-copy {
@@ -489,10 +504,11 @@
                 }
 
                 .hero-description {
-                    font-size: 0.82rem;
-                    line-height: 1.25;
+                    font-size: 0.84rem;
+                    line-height: 1.3;
                     margin-top: 8px;
                     margin-inline: auto;
+                    max-width: 280px;
                 }
 
                 .peso-brand-text {
@@ -523,29 +539,58 @@
                 }
 
                 .hero-tabulation {
-                    width: min(90vw, 320px);
-                    margin-top: 0;
-                    padding: 10px 10px;
+                    width: min(90vw, 310px);
+                    margin-top: 16px;
+                    padding: 14px 10px 12px;
+                    border-radius: 14px;
+                    justify-self: center;
                 }
 
                 .hero-tabulation-grid {
-                    gap: 6px 8px;
+                    gap: 8px 8px;
                 }
 
                 .hero-stat strong {
-                    font-size: clamp(18px, 7.2vw, 24px);
+                    font-size: clamp(21px, 7.2vw, 26px);
                 }
 
                 .hero-stat span {
-                    font-size: 0.78rem;
+                    font-size: 0.7rem;
+                    margin-top: 4px;
                 }
 
                 .about-section {
-                    margin: 1rem auto 1.5rem;
+                    padding: 1.25rem;
+                    margin: -22px auto 1.5rem;
+                    position: relative;
+                    z-index: 3;
                 }
 
                 .about-section::before {
-                    display: none;
+                    display: block;
+                    top: -20px;
+                    width: min(420px, 95%);
+                    height: 26px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0) 100%);
+                    filter: blur(2px);
+                }
+
+                .about-grid {
+                    gap: 0.9rem;
+                }
+
+                .about-item {
+                    padding: 1rem;
+                }
+
+                .about-item h3 {
+                    font-size: 1.25rem;
+                    margin-bottom: 0.7rem;
+                }
+
+                .about-item p {
+                    font-size: 0.95rem;
+                    line-height: 1.55;
                 }
             }
         </style>
