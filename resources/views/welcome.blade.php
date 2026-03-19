@@ -373,6 +373,76 @@
                         font-size: 0.9rem;
                     }
                 }
+                .news-updates-section {
+    width: min(1300px, calc(100% - 24px));
+    margin: 2rem auto;
+}
+
+.news-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0a3764;
+    margin-bottom: 1.5rem;
+}
+
+.news-header span:first-child,
+.news-header span:last-child {
+    flex: 1;
+    height: 3px;
+    background: #dc2626;
+}
+
+/* 🔥 MAIN FIX: GRID SYSTEM */
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* CARD DESIGN */
+.news-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    height: 100%;
+    background: white;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-card-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.news-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.news-card-text {
+    flex-grow: 1;
+}
+
+.news-card .btn {
+    align-self: flex-start;
+}
+
         </style>
     </head>
     <body class="peso-body">
@@ -459,54 +529,43 @@
                     </article>
                 </div>
             </section>
-
 <section id="features" class="news-updates-section">
-    <div class="container">
-      <h2 class="news-header">
-    
-    <span></span>
-    
-    <span>
-        News & Updates
-    </span>
-    
-    <span></span>
+    <h2 class="news-header">
+        <span></span>
+        <span>News & Updates</span>
+        <span></span>
+    </h2>
 
-</h2>
-<div class="news-cards">
+    <div class="news-cards">
 
-    <div class="card news-card">
-        <img src="https://i.pinimg.com/originals/80/9a/3d/809a3de812b7389316cc4c4edb0a3c05.gif" class="card-img-top news-card-img" alt="Events">
-        <div class="card-body news-card-body">
-        <h5 class="card-title news-card-title">Events</h5>
-            <p class="card-text">Upcoming PESO events and job fairs.</p>
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#fastSetupModal">Learn More</a>
+        <div class="card news-card">
+            <img src="https://i.pinimg.com/originals/80/9a/3d/809a3de812b7389316cc4c4edb0a3c05.gif" class="news-card-img" alt="Events">
+            <div class="card-body news-card-body">
+                <h5 class="news-card-title">Events</h5>
+                <p class="card-text">Upcoming PESO events and job fairs.</p>
+                <a href="#" class="btn btn-danger">Learn More</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card news-card">
-        <img src="https://i.pinimg.com/originals/5c/87/17/5c871720baf04c9bb0330801f0101137.gif" class="card-img-top news-card-img" alt="Announcements">
-        <div class="card-body news-card-body">
-        <h5 class="card-title news-card-title">Announcements</h5>
-            <p class="card-text">Latest Announcements.</p>
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reliableModal">Learn More</a>
+        <div class="card news-card">
+            <img src="https://i.pinimg.com/originals/5c/87/17/5c871720baf04c9bb0330801f0101137.gif" class="news-card-img" alt="Announcements">
+            <div class="card-body news-card-body">
+                <h5 class="news-card-title">Announcements</h5>
+                <p class="card-text">Latest announcements and updates.</p>
+                <a href="#" class="btn btn-danger">Learn More</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card news-card">
-        <img src="https://i.pinimg.com/originals/d6/74/e7/d674e764a10d6b4f8cdd011f030c886f.gif" class="card-img-top news-card-img" alt="Community">
-        <div class="card-body news-card-body">
-        <h5 class="card-title news-card-title">Community</h5>
-            <p class="card-text news-card-text">Community initiatives.</p>
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#flexibleModal">Learn More</a>
+        <div class="card news-card">
+            <img src="https://i.pinimg.com/originals/d6/74/e7/d674e764a10d6b4f8cdd011f030c886f.gif" class="news-card-img" alt="Community">
+            <div class="card-body news-card-body">
+                <h5 class="news-card-title">Community</h5>
+                <p class="card-text">Community initiatives and programs.</p>
+                <a href="#" class="btn btn-danger">Learn More</a>
+            </div>
         </div>
+
     </div>
-
-</div>
-
-</div>
-
-
 </section>
 
         </main>
