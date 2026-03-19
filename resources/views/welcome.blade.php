@@ -459,6 +459,56 @@
                     </article>
                 </div>
             </section>
+
+<section id="features" class="news-updates-section">
+    <div class="container">
+      <h2 class="news-header">
+    
+    <span></span>
+    
+    <span>
+        News & Updates
+    </span>
+    
+    <span></span>
+
+</h2>
+<div class="news-cards">
+
+    <div class="card news-card">
+        <img src="https://i.pinimg.com/originals/80/9a/3d/809a3de812b7389316cc4c4edb0a3c05.gif" class="card-img-top news-card-img" alt="Events">
+        <div class="card-body news-card-body">
+        <h5 class="card-title news-card-title">Events</h5>
+            <p class="card-text">Upcoming PESO events and job fairs.</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#fastSetupModal">Learn More</a>
+        </div>
+    </div>
+
+    <div class="card news-card">
+        <img src="https://i.pinimg.com/originals/5c/87/17/5c871720baf04c9bb0330801f0101137.gif" class="card-img-top news-card-img" alt="Announcements">
+        <div class="card-body news-card-body">
+        <h5 class="card-title news-card-title">Announcements</h5>
+            <p class="card-text">Latest Announcements.</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#reliableModal">Learn More</a>
+        </div>
+    </div>
+
+    <div class="card news-card">
+        <img src="https://i.pinimg.com/originals/d6/74/e7/d674e764a10d6b4f8cdd011f030c886f.gif" class="card-img-top news-card-img" alt="Community">
+        <div class="card-body news-card-body">
+        <h5 class="card-title news-card-title">Community</h5>
+            <p class="card-text news-card-text">Community initiatives.</p>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#flexibleModal">Learn More</a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+
+</section>
+
         </main>
     </body>
 </html>
