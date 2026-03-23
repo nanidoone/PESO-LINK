@@ -133,6 +133,9 @@
     color: #4b5563;
     line-height: 1.75;
     margin: 0;
+    text-align: justify;
+    hyphens: none;
+    word-break: normal;
 }
 
 /* =============================================
