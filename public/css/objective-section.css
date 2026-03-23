@@ -80,11 +80,11 @@
     color: #1e2b3a;
     margin: 0;
     text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    word-break: break-word;
-    overflow-wrap: break-word;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+    -ms-hyphens: none !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
     transition: color 0.2s;
 }
 .objective-text:focus {
@@ -119,6 +119,11 @@
         text-align-last: left;
         font-size: 0.97rem;
         line-height: 1.8;
+        hyphens: none !important;
+        -webkit-hyphens: none !important;
+        -ms-hyphens: none !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
     }
 }
 
