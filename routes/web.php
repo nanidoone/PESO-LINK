@@ -7,4 +7,5 @@ Route::get('/', function () {
 });
 
 Route::view('/history', 'history')->name('history');
+Route::view('/history-of-excellence', 'history-excellence')->name('history-of-excellence');
 Route::view('/objectives', 'objective')->name('objectives');

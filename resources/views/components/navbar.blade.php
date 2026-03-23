@@ -20,12 +20,13 @@
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle nav-link-custom {{ request()->is('about*','objectives','history','legal-mandate') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle nav-link-custom {{ request()->is('about*','objectives','history','history-of-excellence','legal-mandate') ? 'active' : '' }}" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-info-circle me-2"></i>Get To Know Us
           </a>
           <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="aboutDropdown">
             <li><a class="dropdown-item dropdown-item-custom {{ request()->is('objectives') ? 'active' : '' }}" href="{{ url('/objectives') }}"><i class="bi bi-target me-2"></i>Objectives</a></li>
             <li><a class="dropdown-item dropdown-item-custom {{ request()->is('history') ? 'active' : '' }}" href="{{ url('/history') }}"><i class="bi bi-clock-history me-2"></i>History</a></li>
+            <li><a class="dropdown-item dropdown-item-custom {{ request()->is('history-of-excellence') ? 'active' : '' }}" href="{{ url('/history-of-excellence') }}"><i class="bi bi-award me-2"></i>History of Excellence</a></li>
             <li><a class="dropdown-item dropdown-item-custom {{ request()->is('legal-mandate') ? 'active' : '' }}" href="{{ url('/legal-mandate') }}"><i class="bi bi-shield-check me-2"></i>Legal Mandate</a></li>
             <li><a class="dropdown-item dropdown-item-custom" href="{{ url('/about') }}"><i class="bi bi-diagram-3 me-2"></i>Organizational Structure</a></li>
           </ul>
