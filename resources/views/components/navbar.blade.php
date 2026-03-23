@@ -158,4 +158,22 @@
 .logo-fallback {
   font-size: 1.4rem !important;
 }
+
+/* Keep footer at the bottom even on short pages */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.peso-footer {
+  margin-top: auto;
+}
 </style>
+
+
+
