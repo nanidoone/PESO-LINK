@@ -5,11 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PESO Job Portal</title>
 
+        <!-- Bootstrap CSS for navbar and layout -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
         @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @else
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         @endif
+        <link rel="stylesheet" href="{{ asset('css/services.css') }}">
 
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
@@ -74,16 +78,32 @@
 
             .peso-hero {
                 background-image: url('/images/background-desktop.png'), url('/images/background.png') !important;
-                background-size: contain !important;
-                background-position: center top !important;
+                background-size: 1100px auto, 1100px auto !important;
+                background-position: center 12px !important;
                 background-repeat: no-repeat !important;
-                aspect-ratio: 16 / 9;
-                height: auto !important;
-                min-height: 0 !important;
+                min-height: calc(100vh - 76px);
                 position: relative;
                 isolation: isolate;
                 display: flex;
                 align-items: center;
+                padding: clamp(32px, 4vw, 52px) 0;
+            }
+
+            /* Responsive background sizing */
+            .hero-section {
+                background-size: 100% auto;
+            }
+
+            @media (max-width: 375px) {
+                .hero-section {
+                    background-size: 120% auto;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .hero-section {
+                    background-size: 100% auto;
+                }
             }
 
             .peso-hero::before {
@@ -93,7 +113,7 @@
             @media (max-width: 1024px) {
                 .peso-hero {
                     background-image: url('/images/background-tablet.png'), url('/images/background.png') !important;
-                    background-size: cover !important;
+                    background-size: 920px auto, 920px auto !important;
                     background-position: center top !important;
                     height: calc(100svh - 74px) !important;
                     min-height: 520px !important;
@@ -104,7 +124,8 @@
                 width: 100%;
                 height: 100%;
                 min-height: 100% !important;
-                padding: 0 18px !important;
+                padding: clamp(28px, 5vw, 72px) clamp(18px, 4vw, 38px) !important;
+                display: flex;
                 align-items: center !important;
                 justify-content: center !important;
                 position: relative;
@@ -112,12 +133,12 @@
             }
 
             .hero-split {
-                width: min(1220px, 100%);
+                width: min(1240px, 100%);
                 display: grid;
-                grid-template-columns: 1.15fr 0.85fr;
-                gap: clamp(16px, 2.2vw, 34px);
-                align-items: center;
-                margin: 0;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: clamp(28px, 4vw, 56px);
+                align-items: start;
+                margin: 0 auto;
             }
 
             .hero-badge {
@@ -139,6 +160,7 @@
                 margin-inline: 0;
                 text-align: left !important;
                 justify-self: start;
+                max-width: 620px;
             }
 
             .hero-title {
@@ -159,25 +181,53 @@
             }
 
             .hero-description {
-                margin: 14px 0 0;
+                margin: 18px 0 22px;
                 color: var(--orig-blue-900);
-                font-size: clamp(1rem, 1.2vw, 1.125rem);
-                line-height: 1.45;
-                max-width: 600px;
+                font-size: clamp(1rem, 1.2vw, 1.2rem);
+                line-height: 1.6;
+                max-width: 620px;
+            }
+
+            .hero-cta {
+                display: inline-flex;
+                gap: 14px;
+                align-items: center;
+                margin-top: 6px;
+            }
+
+            .hero-btn-primary {
+                background: #1e3a8a;
+                color: #ffffff;
+                border: 2px solid #1e3a8a;
+                padding: 12px 26px;
+                border-radius: 999px;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+                box-shadow: 0 12px 30px rgba(30, 58, 138, 0.24);
+                transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+                text-decoration: none;
+            }
+
+            .hero-btn-primary:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 16px 34px rgba(30, 58, 138, 0.3);
+                background: #2546a3;
             }
 
             .hero-tabulation {
-                background: rgba(255, 255, 255, 0.8);
+                background: rgba(255, 255, 255, 0.92);
                 color: var(--orig-blue-900);
-                border: 1px solid rgba(252, 211, 77, 0.58);
+                border: 1px solid rgba(252, 211, 77, 0.48);
                 border-radius: 22px;
-                padding: clamp(26px, 2.8vw, 40px);
-                width: min(420px, 100%);
-                box-shadow: 0 0 0 1px rgba(252, 211, 77, 0.34), 0 0 30px rgba(252, 211, 77, 0.24), 0 22px 46px rgba(9, 32, 77, 0.34), 0 10px 20px rgba(0, 0, 0, 0.16);
-                backdrop-filter: blur(8px);
+                padding: clamp(22px, 2.4vw, 32px);
+                width: min(440px, 100%);
+                box-shadow: 0 18px 40px rgba(9, 32, 77, 0.22);
+                backdrop-filter: blur(10px);
                 justify-self: end;
                 position: relative;
                 overflow: hidden;
+                align-self: start;
+                margin-top: clamp(32px, 5vw, 78px);
             }
 
             .hero-tabulation::after {
@@ -221,30 +271,19 @@
             }
 
             .about-section {
-                background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, #ffffff 30%);
-                backdrop-filter: blur(2px);
+                background: linear-gradient(180deg, #ffffff 0%, #f4f7fb 100%);
                 border-radius: 28px;
-                padding: 2.4rem 2.25rem 2.25rem;
-                margin: -1.35rem auto 2.5rem;
-                box-shadow: 0 14px 30px rgba(0, 20, 40, 0.12);
-                border: 1px solid #eef2f6;
-                border-top: 4px solid #f4c542;
+                padding: 2.6rem 2.6rem 2.4rem;
+                margin: 2.25rem auto 2.5rem;
+                box-shadow: 0 18px 40px rgba(14, 38, 79, 0.12);
+                border: 1px solid #e5e7eb;
                 width: min(1300px, calc(100% - 24px));
                 position: relative;
                 z-index: 2;
             }
 
             .about-section::before {
-                content: "";
-                position: absolute;
-                top: -22px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: min(340px, 62%);
-                height: 26px;
-                background: linear-gradient(180deg, rgba(244, 197, 66, 0.5) 0%, rgba(244, 197, 66, 0) 100%);
-                filter: blur(0.5px);
-                pointer-events: none;
+                content: none;
             }
 
             .about-grid {
@@ -278,18 +317,20 @@
             @media (max-width: 800px) {
                 .peso-hero {
                     background-image: url('/images/background-mobile.png'), url('/images/background.png') !important;
-                    background-size: cover !important;
+                    background-size: 700px auto, 700px auto !important;
                     height: calc(100svh - 74px) !important;
-                    min-height: 480px !important;
-                    background-position: 58% center !important;
+                    min-height: 520px !important;
+                    background-position: center -12px !important;
                 }
                     .hero-split {
                         grid-template-columns: 1fr;
                         gap: 18px;
+                        align-items: start;
                     }
                     .peso-copy {
                         text-align: center !important;
                         justify-self: center;
+                        margin-top: 18px;
                     }
                     .hero-description {
                         margin-inline: auto;
@@ -297,10 +338,11 @@
                     .hero-tabulation {
                         justify-self: center;
                         width: min(560px, 100%);
+                        margin-top: 28px;
                     }
 
                 .peso-hero-content {
-                    padding: 0 14px !important;
+                    padding: 18px 16px 8px !important;
                 }
 
                 .hero-split {
@@ -314,7 +356,7 @@
                 }
 
                 .hero-title {
-                    font-size: clamp(1.8rem, 8vw, 2.4rem);
+                    font-size: clamp(1.6rem, 7vw, 2.2rem);
                 }
 
                 .hero-subtitle {
@@ -345,6 +387,64 @@
                     width: 58%;
                 }
                 }
+
+            /* Mobile refinements */
+            @media (max-width: 540px) {
+                .peso-hero {
+                    padding: 22px 0 32px;
+                    background-size: 680px auto, 680px auto !important;
+                    background-position: center 24px !important;
+                    padding-bottom: 88px;
+                }
+
+                .peso-hero-content {
+                    padding: 20px 16px 6px !important;
+                }
+
+                .hero-split {
+                    gap: 16px;
+                }
+
+                .hero-title {
+                    font-size: clamp(1.45rem, 6.6vw, 1.95rem);
+                    line-height: 1.08;
+                }
+
+                .hero-subtitle {
+                    font-size: clamp(0.98rem, 5vw, 1.18rem);
+                }
+
+                .hero-description {
+                    font-size: clamp(0.95rem, 4.6vw, 1.08rem);
+                    line-height: 1.55;
+                    margin: 12px 0 18px;
+                }
+
+                .hero-tabulation {
+                    margin-top: 14px;
+                    padding: 18px;
+                    width: 100%;
+                }
+
+                .hero-tabulation-grid {
+                    gap: 12px;
+                }
+
+                .hero-cta {
+                    justify-content: center;
+                    margin-top: 12px;
+                }
+
+                .hero-btn-primary {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                /* Hide stats card on small phones */
+                .hero-tabulation {
+                    display: none;
+                }
+            }
 
                 @media (max-width: 620px) {
                     .peso-brand-text {
@@ -446,42 +546,24 @@
         </style>
     </head>
     <body class="peso-body">
-        <header class="peso-header">
-            <div class="peso-header-inner">
-                <a href="#" class="peso-brand" aria-label="PESO Manolo Fortich home">
-                    <img src="{{ asset('images/logo.png') }}" alt="PESO logo" class="peso-brand-logo">
-                    <span class="peso-brand-text">PESO Manolo Fortich</span>
-                </a>
-
-                <div class="peso-header-right">
-                    <nav class="peso-nav" aria-label="Primary">
-                        <a href="#" class="is-active">Home</a>
-                        <a href="#">Job Postings</a>
-                        <a href="#">Services</a>
-                        <a href="#">About Us</a>
-                        <a href="#">Contact Us</a>
-                    </nav>
-
-                    <div class="peso-actions">
-                        <button type="button" class="peso-chip">Login</button>
-                        <button type="button" class="peso-chip">Register</button>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <!-- Navbar Blade Component -->
+        @include('components.navbar')
 
         <main class="peso-main">
-            <section class="peso-hero" aria-label="Welcome section">
+            <section class="peso-hero hero-section" aria-label="Welcome section">
                 <div class="peso-hero-content">
                     <div class="hero-split">
                         <div class="peso-copy">
                             <span class="hero-badge">Public Employment Service Office</span>
-                            <h1 class="hero-title">PESO Job Portal System</h1>
-                            <h2 class="hero-subtitle">Manolo Fortich, Bukidnon</h2>
+                            <h1 class="hero-title">Connecting People with Opportunities</h1>
+                            
                             <p class="hero-description">
-                                Bridging job seekers and employers in the Municipality of Manolo Fortich through
-                                efficient, accessible, and free employment services.
+                               Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
                             </p>
+
+                            <div class="hero-cta">
+                                <a href="{{ url('/login') }}" class="hero-btn-primary">Get Started</a>
+                            </div>
                         </div>
 
                         <aside class="hero-tabulation" aria-label="Quick statistics">
@@ -495,7 +577,7 @@
                                     <span>Employers</span>
                                 </div>
                                 <div class="hero-stat">
-                                    <strong>300+</strong>
+                                    <strong>300+</strong>   
                                     <span>Jobs Posted</span>
                                 </div>
                                 <div class="hero-stat">
@@ -567,7 +649,76 @@
 
     </div>
 </section>
+        @include('components.services')
+
+        <!-- FOOTER / CONTACT -->
+        <footer id="contact" class="peso-footer" style="background: linear-gradient(90deg, #0f2d52, #1f4b8f); color: #dfe7f5; border-top: 3px solid #d72638; box-shadow: 0 -10px 28px rgba(10, 35, 80, 0.18);">
+            <div class="nav-container container py-5">
+                <div class="row g-4 align-items-start">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{{ asset('images/logo.png') }}" alt="PESO Logo" class="rounded-circle shadow-sm me-3" style="width: 48px; height: 42px; object-fit: cover;">
+                            <h4 class="footer-title mb-0" style="color: #f5f7fb; font-weight: 700;">PESO Manolo Fortich</h4>
+                        </div>
+                        <p class="text-blue-300 text-sm mb-3" style="color: #b3c6e0;">Public Employment Service Office — Connecting jobseekers with opportunities in Manolo Fortich, Bukidnon.</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <a href="https://www.facebook.com/lgupesomanolofortich" target="_blank" class="d-flex align-items-center gap-2" style="color: #b3c6e0; text-decoration: none;">
+                                <i class="bi bi-facebook" style="font-size: 1.2rem;"></i>
+                                <span>PESO Manolo Fortich</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Contact Us</h4>
+                        <ul class="list-unstyled" style="color: #b3c6e0;">
+                            <li class="d-flex align-items-start gap-2 mb-2">
+                                <i class="bi bi-geo-alt-fill mt-1" style="font-size: 1rem;"></i>
+                                <span>Motorpool, Manolo Fortich, Bukidnon</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2 mb-2">
+                                <i class="bi bi-envelope-fill mt-1" style="font-size: 1rem;"></i>
+                                <span>peso&#64;manolofortich.gov.ph</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2 mb-2">
+                                <i class="bi bi-telephone-fill mt-1" style="font-size: 1rem;"></i>
+                                <span>(088) 123-4567</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Quick Links</h4>
+                        <ul class="list-unstyled" style="color: #b3c6e0;">
+                            <li class="mb-2"><a href="{{ url('/') }}" style="color: #b3c6e0; text-decoration: none;">Home</a></li>
+                            <li class="mb-2"><a href="{{ url('/about') }}" style="color: #b3c6e0; text-decoration: none;">Get To Know Us</a></li>
+                            <li class="mb-2"><a href="{{ url('/#services') }}" style="color: #b3c6e0; text-decoration: none;">Services</a></li>
+                            <li class="mb-2"><a href="{{ url('/jobs') }}" style="color: #b3c6e0; text-decoration: none;">Job List</a></li>
+                            <li class="mb-2"><a href="{{ url('/contact') }}" style="color: #b3c6e0; text-decoration: none;">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Office Hours</h4>
+                        <ul class="list-unstyled" style="color: #b3c6e0;">
+                            <li class="d-flex justify-content-between mb-2"><span>Monday - Friday</span><span style="color: #fff;">8:00 AM - 5:00 PM</span></li>
+                            <li class="d-flex justify-content-between mb-2"><span>Saturday</span><span style="color: #fff;">Closed</span></li>
+                            <li class="d-flex justify-content-between mb-2"><span>Sunday</span><span style="color: #fff;">Closed</span></li>
+                        </ul>
+                        <div class="mt-4 pt-3 border-top" style="border-color: #1f4b8f !important;">
+                            <a href="https://www.facebook.com/lgupesomanolofortich" target="_blank" class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-2 fw-medium" style="background: linear-gradient(120deg, #d72638, #f24b5d); color: #fff; text-decoration: none;">
+                                <i class="bi bi-facebook" style="font-size: 1rem;"></i>
+                                Visit our Facebook Page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4 pt-3" style="border-top: 1px solid #1f4b8f; color: #b3c6e0;">
+                    <p class="mb-0">&copy; {{ date('Y') }} PESO Job Portal System — Manolo Fortich, Bukidnon. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
 
         </main>
+
+    <!-- Bootstrap JS (for dropdowns and navbar toggler) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
