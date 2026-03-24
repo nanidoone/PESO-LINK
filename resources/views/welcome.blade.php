@@ -186,7 +186,7 @@
 
             .home-top-fix .hero-title {
                 margin: 0;
-                font-size: clamp(2.1rem, 4.3vw, 3rem);
+                font-size: clamp(2.35rem, 4.8vw, 3.4rem);
                 line-height: 1.04;
                 color: var(--orig-blue-900);
                 text-shadow: 0 6px 16px rgba(255, 255, 255, 0.55);
@@ -418,7 +418,7 @@
                 }
 
                 .home-top-fix .hero-title {
-                    font-size: clamp(1.8rem, 8vw, 2.4rem);
+                    font-size: clamp(1.95rem, 8.3vw, 2.55rem);
                 }
 
                 .home-top-fix .hero-subtitle {
@@ -491,7 +491,7 @@
                 }
 
                 .home-top-fix .hero-title {
-                    font-size: clamp(1.45rem, 6.4vw, 1.9rem);
+                    font-size: clamp(1.55rem, 6.7vw, 2rem);
                 }
 
                 .home-top-fix .hero-subtitle {
