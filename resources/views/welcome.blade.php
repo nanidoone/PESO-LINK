@@ -551,42 +551,54 @@
 
         <main class="peso-main">
             <section class="peso-hero hero-section" aria-label="Welcome section">
-                <div class="peso-hero-content">
-                    <div class="hero-split">
-                        <div class="peso-copy">
-                            <h1 class="hero-badge">Public Employment Service Office</>
-                            <h1 class="hero-title">Connecting People with Opportunities</h1>
+                <!-- HERO -->
+                <div class="hero-static" style="width: min(1360px, 100%); height: 700px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 22px; box-sizing: border-box; background: url('{{ asset('css/images/background.png') }}') center/cover no-repeat; position: relative; overflow: hidden; padding: 100px 24px 90px;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.1);"></div>
 
-                            <p class="hero-description">
-                               Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
-                            </p>
+                    <div style="position: relative; z-index: 2; text-align: left; color: white; width: min(58%, 680px); transform: translateY(-2px);">
+                        <h1 style="font-size: 46px; font-weight: 700; line-height: 1.03; margin-bottom: 10px; color: #075cb2e6; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                            Welcome to <span style="color: #e74c3c;">PESO</span>
+                        </h1>
 
-                            <div class="hero-cta">
-                                <a href="{{ url('/login') }}" class="hero-btn-primary">Get Started</a>
+                        <h2 style="font-size: 46px; font-weight: 700; line-height: 1.03; color: #e74c3c; margin-bottom: 20px;">
+                            Manolo Fortich
+                        </h2>
+
+                        <h1 style="font-size: 34px; font-weight: 700; line-height: 1.08; margin-bottom: 18px; color: #075cb2e6; text-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+                            Connecting People <span style="color: #e74c3c;">with Opportunities</span>
+                        </h1>
+
+                        <p style="font-size: 18px; color: rgb(7, 6, 6); margin-bottom: 30px; line-height: 1.6; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
+                            Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
+                        </p>
+
+                        <div style="display: flex; justify-content: flex-start;">
+                            <a href="{{ route('login') }}" style="padding: 13px 45px; font-size: 15px; font-weight: 600; border-radius: 30px; border: 2px solid #3498db; color: white; background: #3498db; text-decoration: none;">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside aria-label="Quick statistics" style="position: relative; z-index: 2; width: min(340px, 36%); background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(7, 92, 178, 0.2); border-radius: 22px; padding: 20px; box-shadow: 0 18px 40px rgba(9, 32, 77, 0.22); backdrop-filter: blur(10px); transform: translateY(100px);">
+                        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px;">
+                            <div style="text-align: center;">
+                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">500+</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Job Seekers</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">50+</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Employers</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">300+</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Jobs Posted</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">85+</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Placement Rate</span>
                             </div>
                         </div>
-
-                        <aside class="hero-tabulation" aria-label="Quick statistics">
-                            <div class="hero-tabulation-grid">
-                                <div class="hero-stat">
-                                    <strong>500+</strong>
-                                    <span>Job Seekers</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>50+</strong>
-                                    <span>Employers</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>300+</strong>
-                                    <span>Jobs Posted</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>85+</strong>
-                                    <span>Placement Rate</span>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+                    </aside>
                 </div>
             </section>
 
