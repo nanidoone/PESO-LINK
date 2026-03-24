@@ -1,6 +1,6 @@
 <section class="peso-services-section" id="services">
     <div class="services-header">
-        
+
         <h2>Portal <span>Features</span></h2>
         <p>Discover the powerful features designed to connect jobseekers and employers seamlessly.</p>
     </div>
@@ -23,7 +23,7 @@
                 <li class="service-feature"><span class="service-dot service-blue"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg></span><span>Receive Notifications &amp; Alerts</span></li>
             </ul>
             <div class="service-divider"></div>
-            <a href="{{ Route::has('jobseeker.vacancies') ? route('jobseeker.vacancies') : url('/') }}" class="service-btn service-blue">
+            <a href="{{ route('jobseeker.vacancies') }}" class="service-btn service-blue">
                 <span>See Active Job Vacancies</span>
                 <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>

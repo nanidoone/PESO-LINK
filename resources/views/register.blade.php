@@ -131,11 +131,11 @@
         <h1 class="register-title">Create Account</h1>
         <p class="register-subtitle">Join PESO and find your perfect job</p>
 
-        <form action="#" method="POST">
+<form action="{{ route('register') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="full_name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter your full name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
             </div>
 
             <div class="mb-3">
@@ -145,12 +145,7 @@
 
             <div class="mb-3">
                 <label for="role" class="form-label">Register as</label>
-                <select class="form-select" id="role" name="role" required>
-                    <option value="" selected disabled>Select role</option>
-                    <option value="jobseeker">Jobseeker</option>
-                    <option value="employer">Employer</option>
-                    <option value="admin">Admin</option>
-                </select>
+                <input type="hidden" name="role" value="jobseeker">
             </div>
 
             <div class="mb-3">
