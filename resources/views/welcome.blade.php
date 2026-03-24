@@ -651,12 +651,10 @@
                 <div class="peso-hero-content">
                     <div class="hero-split">
                         <div class="peso-copy">
-                            <span class="hero-badge">Public Employment Service Office</span>
-                            <h1 class="hero-title">PESO Job Portal System</h1>
-                            <h2 class="hero-subtitle">Manolo Fortich, Bukidnon</h2>
+                            <span class="hero-badge">PESO Manolo Fortich</span>
+                            <h1 class="hero-title">Link Job Resource Portal</h1>
                             <p class="hero-description">
-                                Bridging job seekers and employers in the Municipality of Manolo Fortich through
-                                efficient, accessible, and free employment services.
+                                Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
                             </p>
                         </div>
 
