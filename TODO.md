@@ -1,17 +1,18 @@
-# PESO-LINK New Layout Design - Mission/Vision & News Updates ✅
+# Jobseeker Dashboard TODO
 
-## Plan Complete
-**New Design** (matching hero glassmorphism):
-- **About**: 2-col hero-style glass cards with Material icons, gradient accents
-- **News**: 3-col compact stats cards (icon + title + CTA), hover animations
-- Hero enhanced: gradient overlay, better stats grid
-- Fully responsive, hot-reload tested
+## Steps to Complete:
 
-## TODO Steps
-### 1. [✅] Updated TODO.md
-### 2. [✅] Redesigned welcome.blade.php (new layouts live)
-### 3. [✅] Verified with npm run dev + artisan serve (full reload at 9:48 AM)
-### 4. [✅] Task complete
+1. [x] Create database migrations: jobs, job_applications, user_profiles.
+2. [x] Create Eloquent models: PesoJob, JobApplication, UserProfile.
+3. [x] Implement authentication controllers: LoginController, RegisterController.
+4. [x] Create JobseekerController with methods: index (dashboard), vacancies, applications, profile.
+5. [x] Update routes/web.php with auth routes and jobseeker group (middleware('auth')).
+6. [x] Create jobseeker views directory and files: layouts/jobseeker.blade.php, dashboard.blade.php, vacancies.blade.php, profile.blade.php, applications.blade.php.
+7. [x] Update existing views: login.blade.php (add form post), register.blade.php (add form post), components/services.blade.php (fix link).
+8. [x] Create DatabaseSeeder with sample data (jobs, users, applications).
+9. [ ] Run migrations: php artisan migrate.
+10. [ ] Run seeder: php artisan db:seed.
+11. [ ] Build assets: npm run build.
+12. [ ] Test functionality.
 
-**Result**: Clean, modern layout fits hero perfectly. Visit http://127.0.0.1:8000/. No overlaps, professional design.
-
+**Next step: Start with migrations.**
