@@ -267,26 +267,16 @@
                 backdrop-filter: blur(2px);
                 border-radius: 28px;
                 padding: 2.4rem 2.25rem 2.25rem;
-                margin: -1.35rem auto 2.5rem;
+                margin: 1.25rem auto 2.5rem;
                 box-shadow: 0 14px 30px rgba(0, 20, 40, 0.12);
                 border: 1px solid #eef2f6;
-                border-top: 4px solid #f4c542;
                 width: min(1300px, calc(100% - 24px));
                 position: relative;
                 z-index: 2;
             }
 
             .about-section::before {
-                content: "";
-                position: absolute;
-                top: -22px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: min(340px, 62%);
-                height: 26px;
-                background: linear-gradient(180deg, rgba(244, 197, 66, 0.5) 0%, rgba(244, 197, 66, 0) 100%);
-                filter: blur(0.5px);
-                pointer-events: none;
+                content: none;
             }
 
             .about-grid {
@@ -468,14 +458,14 @@
                 }
 
                 .peso-hero {
-                    background-color: #ececec !important;
+                    background-color: transparent !important;
                     background-image: url('/images/mobile-background.png') !important;
                     background-size: 100% auto !important;
                     background-repeat: no-repeat !important;
                     background-position: center top !important;
                     aspect-ratio: auto !important;
                     height: auto !important;
-                    min-height: 100svh !important;
+                    min-height: 0 !important;
                 }
 
                 .peso-hero-content {
@@ -483,7 +473,7 @@
                     min-height: 0 !important;
                     align-items: center !important;
                     justify-content: flex-start !important;
-                    padding: 127px 12px 28px !important;
+                    padding: 127px 12px 125px !important;
                 }
 
                 .hero-split {
@@ -543,10 +533,15 @@
 
                 .hero-tabulation {
                     width: min(90vw, 310px);
-                    margin-top: 12px;
+                    margin-top: -6px;
                     padding: 14px 10px 12px;
                     border-radius: 14px;
                     justify-self: center;
+                    box-shadow: 0 8px 18px rgba(9, 32, 77, 0.2);
+                }
+
+                .hero-tabulation::after {
+                    box-shadow: none;
                 }
 
                 .hero-tabulation-grid {
@@ -563,47 +558,16 @@
                 }
 
                 .about-section {
-                    --about-offset: 33px;
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.92) 30%);
-                    padding: 1.25rem;
-                    margin: var(--about-offset) auto 1.5rem;
-                    position: relative;
-                    isolation: isolate;
-                    overflow: visible;
-                    z-index: 3;
+                    background: transparent !important;
+                    -webkit-backdrop-filter: none !important;
+                    backdrop-filter: none !important;
+                    border: 0;
+                    box-shadow: none;
+                    border-radius: 0;
+                    margin: 0 auto 1.5rem;
+                    padding: 0 !important;
                 }
 
-                .about-section::before {
-                    content: "";
-                    position: absolute;
-                    left: 50%;
-                    transform: translate(-50%, -100%);
-                    display: block;
-                    top: 0;
-                    width: min(420px, 95%);
-                    height: 16px;
-                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
-                    filter: blur(0.8px);
-                    pointer-events: none;
-                }
-
-                .about-grid {
-                    gap: 0.9rem;
-                }
-
-                .about-item {
-                    padding: 1rem;
-                }
-
-                .about-item h3 {
-                    font-size: 1.25rem;
-                    margin-bottom: 0.7rem;
-                }
-
-                .about-item p {
-                    font-size: 0.95rem;
-                    line-height: 1.55;
-                }
             }
         </style>
     </head>
