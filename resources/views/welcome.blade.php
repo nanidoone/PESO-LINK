@@ -554,7 +554,7 @@
                 <div class="peso-hero-content">
                     <div class="hero-split">
                         <div class="peso-copy">
-                            <span class="hero-badge">Public Employment Service Office</span>
+                            <h1 class="hero-badge">Public Employment Service Office</>
                             <h1 class="hero-title">Connecting People with Opportunities</h1>
 
                             <p class="hero-description">

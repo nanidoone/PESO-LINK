@@ -68,7 +68,7 @@
         </li>
         @else
         <li class="nav-item d-flex align-items-center ms-2">
-          <a href="{{ url('/login') }}" class="btn fw-bold cta-button">
+          <a href="{{ route('login') }}" class="btn fw-bold cta-button">
             <i class="bi bi-box-arrow-in-right me-2"></i><span class="d-none d-sm-inline">Log In</span><span class="d-sm-none">Login</span>
           </a>
         </li>
