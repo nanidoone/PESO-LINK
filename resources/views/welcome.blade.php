@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PESO Job Portal</title>
 
+        <!-- Preload hero background images to eliminate loading delay -->
+        <link rel="preload" as="image" href="/images/background.png">
+        <link rel="preload" as="image" href="/images/background-desktop.png" media="(min-width: 1025px)">
+        <link rel="preload" as="image" href="/images/background-tablet.png" media="(min-width: 801px) and (max-width: 1024px)">
+        <link rel="preload" as="image" href="/images/background-mobile.png" media="(max-width: 800px)">
+
         <!-- Bootstrap CSS for navbar and layout -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -582,19 +588,19 @@
                     <aside aria-label="Quick statistics" style="position: relative; z-index: 2; width: min(340px, 36%); background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(7, 92, 178, 0.2); border-radius: 22px; padding: 20px; box-shadow: 0 18px 40px rgba(9, 32, 77, 0.22); backdrop-filter: blur(10px); transform: translateY(100px);">
                         <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px;">
                             <div style="text-align: center;">
-                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">500+</strong>
+                                <strong class="stat-counter" data-count="500" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
                                 <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Job Seekers</span>
                             </div>
                             <div style="text-align: center;">
-                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">50+</strong>
+                                <strong class="stat-counter" data-count="50" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
                                 <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Employers</span>
                             </div>
                             <div style="text-align: center;">
-                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">300+</strong>
+                                <strong class="stat-counter" data-count="300" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
                                 <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Jobs Posted</span>
                             </div>
                             <div style="text-align: center;">
-                                <strong style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">85+</strong>
+                                <strong class="stat-counter" data-count="85" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
                                 <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Placement Rate</span>
                             </div>
                         </div>
@@ -668,5 +674,54 @@
 
     <!-- Bootstrap JS (for dropdowns and navbar toggler) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Stat counter animation -->
+    <script>
+    (function () {
+        const DURATION = 1800; // ms
+
+        function easeOutQuad(t) {
+            return t * (2 - t);
+        }
+
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.count, 10);
+            const suffix = el.dataset.suffix || '';
+            const start = performance.now();
+
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / DURATION, 1);
+                const value = Math.floor(easeOutQuad(progress) * target);
+                el.textContent = value + (progress === 1 ? suffix : '');
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                }
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        const counters = document.querySelectorAll('.stat-counter');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.25 });
+
+            counters.forEach(function (el) { observer.observe(el); });
+        } else {
+            // Fallback: just show final values immediately
+            counters.forEach(function (el) {
+                el.textContent = el.dataset.count + (el.dataset.suffix || '');
+            });
+        }
+    })();
+    </script>
     </body>
 </html>
