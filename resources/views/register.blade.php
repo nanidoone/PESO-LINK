@@ -41,67 +41,71 @@
         }
 
         .register-card {
-            width: min(460px, 100%);
+            width: min(432px, 100%);
             background: var(--peso-surface);
             border: 1px solid rgba(15, 45, 82, 0.08);
             border-radius: 18px;
-            box-shadow: 0 18px 40px rgba(15, 45, 82, 0.18);
-            padding: clamp(24px, 4vw, 34px);
+            box-shadow: 0 12px 28px rgba(15, 45, 82, 0.12);
+            padding: clamp(22px, 4vw, 30px);
             position: relative;
             z-index: 1;
         }
 
         .brand-logo {
-            width: 66px;
-            height: 66px;
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
             object-fit: cover;
             display: block;
-            margin: 0 auto 12px;
+            margin: 0 auto 10px;
         }
 
         .register-title {
             margin: 0;
             text-align: center;
-            color: var(--peso-blue-900);
-            font-weight: 800;
-            font-size: clamp(1.7rem, 4.8vw, 2.2rem);
+            color: #2a5fa7;
+            font-weight: 700;
+            font-size: clamp(2rem, 4.6vw, 2.5rem);
         }
 
         .register-subtitle {
-            margin: 8px 0 24px;
+            margin: 6px 0 22px;
             text-align: center;
             color: var(--peso-text-muted);
-            font-size: 0.98rem;
+            font-size: 0.95rem;
         }
 
         .form-label {
             font-weight: 600;
             color: #26313d;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
         }
 
         .form-control,
         .form-select {
-            border-radius: 10px;
-            padding: 11px 14px;
+            border-radius: 8px;
+            padding: 10px 12px;
             border: 1px solid #ccd3dc;
+            min-height: 44px;
+            font-size: 0.97rem;
         }
 
         .form-control:focus,
         .form-select:focus {
-            border-color: var(--peso-blue-700);
-            box-shadow: 0 0 0 0.18rem rgba(45, 101, 177, 0.16);
+            border-color: #111827;
+            box-shadow: 0 0 0 0.18rem rgba(17, 24, 39, 0.12);
         }
 
         .register-button {
             width: 100%;
             border: 0;
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 12px 16px;
             font-weight: 700;
             color: #fff;
-            background: linear-gradient(120deg, #2d65b1, #3b98d4);
-            box-shadow: 0 10px 22px rgba(45, 101, 177, 0.28);
+            background: linear-gradient(120deg, #2f85c7, #37a0de);
+            box-shadow: 0 8px 18px rgba(45, 101, 177, 0.22);
         }
 
         .register-button:hover {
@@ -120,8 +124,24 @@
         }
 
         .divider {
-            margin: 16px 0;
+            margin: 14px 0;
             border-top: 1px solid #e4e9ef;
+        }
+
+        .register-foot {
+            color: #5f6c7a;
+            font-size: 0.93rem;
+        }
+
+        .register-foot a {
+            font-weight: 700;
+        }
+
+        @media (max-width: 480px) {
+            .register-card {
+                border-radius: 14px;
+                padding: 20px 16px;
+            }
         }
     </style>
 </head>
@@ -145,7 +165,12 @@
 
             <div class="mb-3">
                 <label for="role" class="form-label">Register as</label>
-                <input type="hidden" name="role" value="jobseeker">
+                <select class="form-select" id="role" name="role" required>
+                    <option value="" selected disabled>Select your role</option>
+                    <option value="jobseeker">Jobseeker</option>
+                    <option value="employer">Employer</option>
+                    <option value="admin">Admin</option>
+                </select>
             </div>
 
             <div class="mb-3">
@@ -164,7 +189,7 @@
         </form>
 
         <div class="divider"></div>
-        <p class="text-center mb-0" style="color: #5f6c7a;">
+        <p class="text-center mb-0 register-foot">
             Already have an account? <a href="{{ route('login') }}" class="link-muted">Login</a>
         </p>
     </main>
