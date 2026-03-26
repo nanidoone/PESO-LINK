@@ -20,7 +20,8 @@
                 <ul class="list-unstyled" style="color: #b3c6e0;">
                     <li class="d-flex align-items-start gap-2 mb-2">
                         <i class="bi bi-geo-alt-fill mt-1" style="font-size: 1rem;"></i>
-                        <span>Gen. Andres Bonifacio St. Cor. Albarece St., Brgy. Tankulan, Manolo Fortich, Bukidnon 8703, (In front of Tankulan Flea Market - Taboan)</span>
+                        <span>Gen. Andres Bonifacio St. Cor. Albarece St., Brgy. Tankulan, Manolo Fortich, Bukidnon 8703,</span>
+                        <li>(In front of Tankulan Flea Market - Taboan)</li>
                     </li>
                     <li class="d-flex align-items-start gap-2 mb-2">
                         <i class="bi bi-envelope-fill mt-1" style="font-size: 1rem;"></i>
