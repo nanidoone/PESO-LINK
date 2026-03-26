@@ -37,7 +37,6 @@
                 <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Quick Links</h4>
                 <ul class="list-unstyled" style="color: #b3c6e0;">
                     <li class="mb-2"><a href="{{ url('/') }}" style="color: #b3c6e0; text-decoration: none;">Home</a></li>
-                    <li class="mb-2"><a href="{{ url('/about') }}" style="color: #b3c6e0; text-decoration: none;">Get To Know Us</a></li>
                     <li class="mb-2"><a href="{{ url('/#services') }}" style="color: #b3c6e0; text-decoration: none;">Services</a></li>
                     <li class="mb-2"><a href="{{ url('/jobs') }}" style="color: #b3c6e0; text-decoration: none;">Job List</a></li>
                     <li class="mb-2"><a href="{{ url('/contact') }}" style="color: #b3c6e0; text-decoration: none;">Contact</a></li>

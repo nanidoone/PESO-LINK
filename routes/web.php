@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobseekerController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,10 @@ Route::get('/', function () {
 Route::view('/history', 'history')->name('history');
 Route::view('/history-of-excellence', 'history-excellence')->name('history-of-excellence');
 Route::view('/objectives', 'objective')->name('objectives');
+Route::view('/legal-mandate', 'legal-mandate')->name('legal-mandate');
+
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 // Auth routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
