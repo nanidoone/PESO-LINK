@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\JobseekerController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,11 +29,19 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 
 // Jobseeker routes (protected)
-Route::middleware('auth')->prefix('jobseeker')->name('jobseeker.')->group(function () {
+Route::middleware(['auth'])->prefix('jobseeker')->name('jobseeker.')->group(function () {
     Route::get('/dashboard', [JobseekerController::class, 'dashboard'])->name('dashboard');
     Route::get('/vacancies', [JobseekerController::class, 'vacancies'])->name('vacancies');
     Route::get('/applications', [JobseekerController::class, 'applications'])->name('applications');
     Route::get('/profile', [JobseekerController::class, 'profile'])->name('profile');
 });
-?>
 
+// Employer routes (protected)
+Route::middleware(['auth'])->prefix('employer')->name('employer.')->group(function () {
+    Route::get('/dashboard', [EmployerController::class, 'dashboard'])->name('dashboard');
+});
+
+// Admin routes (protected)
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+});
