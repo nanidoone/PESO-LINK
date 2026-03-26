@@ -20,11 +20,12 @@
                 <ul class="list-unstyled" style="color: #b3c6e0;">
                     <li class="d-flex align-items-start gap-2 mb-2">
                         <i class="bi bi-geo-alt-fill mt-1" style="font-size: 1rem;"></i>
-                        <span>Motorpool, Manolo Fortich, Bukidnon</span>
+                        <span>Gen. Andres Bonifacio St. Cor. Albarece St., Brgy. Tankulan, Manolo Fortich, Bukidnon 8703,</span>
+                        <li>(In front of Tankulan Flea Market - Taboan)</li>
                     </li>
                     <li class="d-flex align-items-start gap-2 mb-2">
                         <i class="bi bi-envelope-fill mt-1" style="font-size: 1rem;"></i>
-                        <span>peso&#64;manolofortich.gov.ph</span>
+                        <span>peso@manolofortich.gov.ph</span>
                     </li>
                     <li class="d-flex align-items-start gap-2 mb-2">
                         <i class="bi bi-telephone-fill mt-1" style="font-size: 1rem;"></i>
@@ -45,7 +46,8 @@
             <div class="col-12 col-sm-6 col-lg-3">
                 <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Office Hours</h4>
                 <ul class="list-unstyled" style="color: #b3c6e0;">
-                    <li class="d-flex justify-content-between mb-2"><span>Monday - Friday</span><span style="color: #fff;">8:00 AM - 5:00 PM</span></li>
+                    <li class="d-flex justify-content-between mb-2"><span>Monday - Thursday</span><span style="color: #fff;">7:30 AM - 6:00 PM</span></li>
+                    <li class="d-flex justify-content-between mb-2"><span>Friday</span><span style="color: #fff;">Closed</span></li>
                     <li class="d-flex justify-content-between mb-2"><span>Saturday</span><span style="color: #fff;">Closed</span></li>
                     <li class="d-flex justify-content-between mb-2"><span>Sunday</span><span style="color: #fff;">Closed</span></li>
                 </ul>

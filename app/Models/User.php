@@ -23,7 +23,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
+
+    public function redirectToDashboard(): string
+    {
+        return match($this->role) {
+            'admin'    => route('admin.dashboard'),
+            'employer' => route('employer.dashboard'),
+            default    => route('jobseeker.dashboard'),
+        };
+    }
 
     /**
      * The attributes that should be hidden for serialization.
