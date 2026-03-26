@@ -21,7 +21,7 @@ class JobseekerController extends Controller
             ->limit(5)
             ->get();
 
-        return view('jobseeker.dashboard', compact('user', 'profile', 'applicationsCount', 'recentApplications'));
+        return view('dashboard.jobseeker', compact('user', 'profile', 'applicationsCount', 'recentApplications'));
     }
 
     public function vacancies()

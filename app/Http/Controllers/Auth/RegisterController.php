@@ -23,12 +23,14 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', Rules\Password::defaults()],
+            'role' => ['required', 'in:jobseeker,employer,admin'],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
+            'name'     => $request->name,
+            'email'    => $request->email,
             'password' => Hash::make($request->password),
+            'role'     => $request->role,
         ]);
 
         // Create default profile
@@ -38,7 +40,7 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('jobseeker.dashboard'));
+        return redirect($user->redirectToDashboard());
     }
 }
 ?>
