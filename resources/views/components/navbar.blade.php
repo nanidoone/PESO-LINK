@@ -52,7 +52,7 @@
             <i class="bi bi-person-circle me-2"></i>{{ auth()->user()->name }}
           </a>
           <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="userDropdown">
-            <li><a class="dropdown-item dropdown-item-custom" href="{{ url('/dashboard') }}">
+            <li><a class="dropdown-item dropdown-item-custom" href="{{ auth()->user()->redirectToDashboard() }}">
               <i class="bi bi-speedometer2 me-2"></i>Dashboard
             </a></li>
             <li><hr class="dropdown-divider"></li>

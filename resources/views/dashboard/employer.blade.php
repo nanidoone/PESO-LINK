@@ -9,5 +9,9 @@
 <body>
     <h1>Employer Dashboard</h1>
     <p>Welcome, {{ auth()->user()->name ?? 'Employer' }}.</p>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>
