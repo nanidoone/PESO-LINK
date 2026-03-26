@@ -38,9 +38,7 @@ class RegisterController extends Controller
             'user_id' => $user->id,
         ]);
 
-        Auth::login($user);
-
-        return redirect($user->redirectToDashboard());
+        return redirect()->route('login');
     }
 }
 ?>
