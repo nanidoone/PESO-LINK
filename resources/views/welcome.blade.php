@@ -476,7 +476,7 @@
                 min-height: 0 !important;
                 align-items: center !important;
                 justify-content: flex-start !important;
-                padding: 127px 12px 125px !important;
+                padding: 127px 12px 195px !important;
             }
 
             .home-top-fix .hero-split {
