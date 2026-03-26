@@ -205,7 +205,7 @@
         .home-top-fix .hero-description {
             margin: 14px 0 0;
             color: var(--orig-blue-900);
-            font-size: clamp(1.35rem, 2vw, 2rem);
+            font-size: clamp(1.2rem, 1.8vw, 1.75rem);
             line-height: 1.4;
             max-width: 600px;
         }
@@ -511,7 +511,7 @@
             .home-top-fix .hero-description {
                 margin: 14px 0 0;
                 color: var(--orig-blue-900);
-                font-size: clamp(1.15rem, 3.8vw, 1.35rem);
+                font-size: clamp(1.05rem, 3.3vw, 1.2rem);
                 line-height: 1.4;
                 max-width: 600px;
             }
