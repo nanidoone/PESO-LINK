@@ -49,7 +49,7 @@
         @auth
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle nav-link-custom" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person-circle me-2"></i>{{ Auth::user()->name }}
+            <i class="bi bi-person-circle me-2"></i>{{ auth()->user()->name }}
           </a>
           <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="userDropdown">
             <li><a class="dropdown-item dropdown-item-custom" href="{{ url('/dashboard') }}">
