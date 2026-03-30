@@ -1,0 +1,12 @@
+{
+    "intelephense.environment.phpVersion": "8.1",
+    "intelephense.diagnostics.enable": true,
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/vendor/**/{bin,Tests,tests,docs,examples}/**",
+        "**/*.blade.php"
+    ],
+    "php.validate.executablePath": null,
+    "php.validate.enable": false
+}

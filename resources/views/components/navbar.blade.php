@@ -49,10 +49,10 @@
         @auth
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle nav-link-custom" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person-circle me-2"></i>{{ Auth::user()->name }}
+            <i class="bi bi-person-circle me-2"></i>{{ auth()->user()->name }}
           </a>
           <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="userDropdown">
-            <li><a class="dropdown-item dropdown-item-custom" href="{{ url('/dashboard') }}">
+            <li><a class="dropdown-item dropdown-item-custom" href="{{ auth()->user()->redirectToDashboard() }}">
               <i class="bi bi-speedometer2 me-2"></i>Dashboard
             </a></li>
             <li><hr class="dropdown-divider"></li>
@@ -68,7 +68,7 @@
         </li>
         @else
         <li class="nav-item d-flex align-items-center ms-2">
-          <a href="{{ url('/login') }}" class="btn fw-bold cta-button">
+          <a href="{{ route('login') }}" class="btn fw-bold cta-button">
             <i class="bi bi-box-arrow-in-right me-2"></i><span class="d-none d-sm-inline">Log In</span><span class="d-sm-none">Login</span>
           </a>
         </li>

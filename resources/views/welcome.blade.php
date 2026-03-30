@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PESO Job Portal</title>
 
+        <!-- Preload hero background images to eliminate loading delay -->
+        <link rel="preload" as="image" href="/images/background.png">
+        <link rel="preload" as="image" href="/images/background-desktop.png" media="(min-width: 1025px)">
+        <link rel="preload" as="image" href="/images/background-tablet.png" media="(min-width: 801px) and (max-width: 1024px)">
+        <link rel="preload" as="image" href="/images/background-mobile.png" media="(max-width: 800px)">
+
         <!-- Bootstrap CSS for navbar and layout -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -551,42 +557,54 @@
 
         <main class="peso-main">
             <section class="peso-hero hero-section" aria-label="Welcome section">
-                <div class="peso-hero-content">
-                    <div class="hero-split">
-                        <div class="peso-copy">
-                            <span class="hero-badge">Public Employment Service Office</span>
-                            <h1 class="hero-title">Connecting People with Opportunities</h1>
-                            
-                            <p class="hero-description">
-                               Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
-                            </p>
+                <!-- HERO -->
+                <div class="hero-static" style="width: min(1360px, 100%); height: 700px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 22px; box-sizing: border-box; background: url('{{ asset('css/images/background.png') }}') center/cover no-repeat; position: relative; overflow: hidden; padding: 100px 24px 90px;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.1);"></div>
 
-                            <div class="hero-cta">
-                                <a href="{{ url('/login') }}" class="hero-btn-primary">Get Started</a>
+                    <div style="position: relative; z-index: 2; text-align: left; color: white; width: min(58%, 680px); transform: translateY(-2px);">
+                        <h1 style="font-size: 46px; font-weight: 700; line-height: 1.03; margin-bottom: 10px; color: #075cb2e6; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
+                            Welcome to <span style="color: #e74c3c;">PESO</span>
+                        </h1>
+
+                        <h2 style="font-size: 46px; font-weight: 700; line-height: 1.03; color: #e74c3c; margin-bottom: 20px;">
+                            Manolo Fortich
+                        </h2>
+
+                        <h1 style="font-size: 34px; font-weight: 700; line-height: 1.08; margin-bottom: 18px; color: #075cb2e6; text-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+                            Connecting People <span style="color: #e74c3c;">with Opportunities</span>
+                        </h1>
+
+                        <p style="font-size: 18px; color: rgb(7, 6, 6); margin-bottom: 30px; line-height: 1.6; text-shadow: 1px 1px 3px rgba(0,0,0,0.3);">
+                            Connecting Filipino jobseekers with verified employers. Access thousands of local and overseas job opportunities through PESO.
+                        </p>
+
+                        <div style="display: flex; justify-content: flex-start;">
+                            <a href="{{ route('login') }}" style="padding: 13px 45px; font-size: 15px; font-weight: 600; border-radius: 30px; border: 2px solid #3498db; color: white; background: #3498db; text-decoration: none;">
+                                Get Started
+                            </a>
+                        </div>
+                    </div>
+
+                    <aside aria-label="Quick statistics" style="position: relative; z-index: 2; width: min(340px, 36%); background: rgba(255, 255, 255, 0.92); border: 1px solid rgba(7, 92, 178, 0.2); border-radius: 22px; padding: 20px; box-shadow: 0 18px 40px rgba(9, 32, 77, 0.22); backdrop-filter: blur(10px); transform: translateY(100px);">
+                        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px;">
+                            <div style="text-align: center;">
+                                <strong class="stat-counter" data-count="500" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Job Seekers</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong class="stat-counter" data-count="50" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Employers</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong class="stat-counter" data-count="300" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Jobs Posted</span>
+                            </div>
+                            <div style="text-align: center;">
+                                <strong class="stat-counter" data-count="85" data-suffix="+" style="display: block; font-size: 40px; line-height: 1; color: #075cb2e6; font-weight: 900;">0</strong>
+                                <span style="display: block; font-size: 1rem; margin-top: 8px; font-weight: 600; color: #e74c3c;">Placement Rate</span>
                             </div>
                         </div>
-
-                        <aside class="hero-tabulation" aria-label="Quick statistics">
-                            <div class="hero-tabulation-grid">
-                                <div class="hero-stat">
-                                    <strong>500+</strong>
-                                    <span>Job Seekers</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>50+</strong>
-                                    <span>Employers</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>300+</strong>   
-                                    <span>Jobs Posted</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <strong>85+</strong>
-                                    <span>Placement Rate</span>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+                    </aside>
                 </div>
             </section>
 
@@ -650,75 +668,60 @@
     </div>
 </section>
         @include('components.services')
-
-        <!-- FOOTER / CONTACT -->
-        <footer id="contact" class="peso-footer" style="background: linear-gradient(90deg, #0f2d52, #1f4b8f); color: #dfe7f5; border-top: 3px solid #d72638; box-shadow: 0 -10px 28px rgba(10, 35, 80, 0.18);">
-            <div class="nav-container container py-5">
-                <div class="row g-4 align-items-start">
-                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="{{ asset('images/logo.png') }}" alt="PESO Logo" class="rounded-circle shadow-sm me-3" style="width: 48px; height: 42px; object-fit: cover;">
-                            <h4 class="footer-title mb-0" style="color: #f5f7fb; font-weight: 700;">PESO Manolo Fortich</h4>
-                        </div>
-                        <p class="text-blue-300 text-sm mb-3" style="color: #b3c6e0;">Public Employment Service Office — Connecting jobseekers with opportunities in Manolo Fortich, Bukidnon.</p>
-                        <div class="d-flex align-items-center mt-3">
-                            <a href="https://www.facebook.com/lgupesomanolofortich" target="_blank" class="d-flex align-items-center gap-2" style="color: #b3c6e0; text-decoration: none;">
-                                <i class="bi bi-facebook" style="font-size: 1.2rem;"></i>
-                                <span>PESO Manolo Fortich</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-                        <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Contact Us</h4>
-                        <ul class="list-unstyled" style="color: #b3c6e0;">
-                            <li class="d-flex align-items-start gap-2 mb-2">
-                                <i class="bi bi-geo-alt-fill mt-1" style="font-size: 1rem;"></i>
-                                <span>Motorpool, Manolo Fortich, Bukidnon</span>
-                            </li>
-                            <li class="d-flex align-items-start gap-2 mb-2">
-                                <i class="bi bi-envelope-fill mt-1" style="font-size: 1rem;"></i>
-                                <span>peso&#64;manolofortich.gov.ph</span>
-                            </li>
-                            <li class="d-flex align-items-start gap-2 mb-2">
-                                <i class="bi bi-telephone-fill mt-1" style="font-size: 1rem;"></i>
-                                <span>(088) 123-4567</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-                        <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Quick Links</h4>
-                        <ul class="list-unstyled" style="color: #b3c6e0;">
-                            <li class="mb-2"><a href="{{ url('/') }}" style="color: #b3c6e0; text-decoration: none;">Home</a></li>
-                            <li class="mb-2"><a href="{{ url('/about') }}" style="color: #b3c6e0; text-decoration: none;">Get To Know Us</a></li>
-                            <li class="mb-2"><a href="{{ url('/#services') }}" style="color: #b3c6e0; text-decoration: none;">Services</a></li>
-                            <li class="mb-2"><a href="{{ url('/jobs') }}" style="color: #b3c6e0; text-decoration: none;">Job List</a></li>
-                            <li class="mb-2"><a href="{{ url('/contact') }}" style="color: #b3c6e0; text-decoration: none;">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <h4 class="footer-title" style="color: #f5f7fb; font-weight: 700;">Office Hours</h4>
-                        <ul class="list-unstyled" style="color: #b3c6e0;">
-                            <li class="d-flex justify-content-between mb-2"><span>Monday - Friday</span><span style="color: #fff;">8:00 AM - 5:00 PM</span></li>
-                            <li class="d-flex justify-content-between mb-2"><span>Saturday</span><span style="color: #fff;">Closed</span></li>
-                            <li class="d-flex justify-content-between mb-2"><span>Sunday</span><span style="color: #fff;">Closed</span></li>
-                        </ul>
-                        <div class="mt-4 pt-3 border-top" style="border-color: #1f4b8f !important;">
-                            <a href="https://www.facebook.com/lgupesomanolofortich" target="_blank" class="d-inline-flex align-items-center gap-2 px-4 py-2 rounded-2 fw-medium" style="background: linear-gradient(120deg, #d72638, #f24b5d); color: #fff; text-decoration: none;">
-                                <i class="bi bi-facebook" style="font-size: 1rem;"></i>
-                                Visit our Facebook Page
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-4 pt-3" style="border-top: 1px solid #1f4b8f; color: #b3c6e0;">
-                    <p class="mb-0">&copy; {{ date('Y') }} PESO Job Portal System — Manolo Fortich, Bukidnon. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
+        @include('components.footer')
 
         </main>
 
     <!-- Bootstrap JS (for dropdowns and navbar toggler) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Stat counter animation -->
+    <script>
+    (function () {
+        const DURATION = 1800; // ms
+
+        function easeOutQuad(t) {
+            return t * (2 - t);
+        }
+
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.count, 10);
+            const suffix = el.dataset.suffix || '';
+            const start = performance.now();
+
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / DURATION, 1);
+                const value = Math.floor(easeOutQuad(progress) * target);
+                el.textContent = value + (progress === 1 ? suffix : '');
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                }
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        const counters = document.querySelectorAll('.stat-counter');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.25 });
+
+            counters.forEach(function (el) { observer.observe(el); });
+        } else {
+            // Fallback: just show final values immediately
+            counters.forEach(function (el) {
+                el.textContent = el.dataset.count + (el.dataset.suffix || '');
+            });
+        }
+    })();
+    </script>
     </body>
 </html>
